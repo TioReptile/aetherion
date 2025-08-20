@@ -50,6 +50,7 @@
                 </svg>
                 <span class="text-xl font-bold text-white tracking-wide">Perfect World Aetherion</span>
             </a>
+            
             <nav class="hidden md:flex items-center space-x-6 text-sm font-medium text-gray-300">
                 <a href="#sobre" class="hover:text-fuchsia-500 transition-colors">Sobre</a>
                 <a href="#proposta" class="hover:text-fuchsia-500 transition-colors">Proposta</a>
@@ -58,140 +59,151 @@
                 <a href="#roadmap" class="hover:text-fuchsia-500 transition-colors">Roadmap</a>
                 <a href="#equipe" class="hover:text-fuchsia-500 transition-colors">Equipe</a>
             </nav>
-            <button class="md:hidden text-white focus:outline-none">
+
+            <button id="menu-btn" class="md:hidden text-white focus:outline-none">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
             </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden">
+            <nav class="px-6 pt-2 pb-4 flex flex-col space-y-2">
+                <a href="#sobre" class="block text-gray-300 hover:text-fuchsia-500 transition-colors">Sobre</a>
+                <a href="#proposta" class="block text-gray-300 hover:text-fuchsia-500 transition-colors">Proposta</a>
+                <a href="#monetizacao" class="block text-gray-300 hover:text-fuchsia-500 transition-colors">Monetização</a>
+                <a href="#financas" class="block text-gray-300 hover:text-fuchsia-500 transition-colors">Finanças</a>
+                <a href="#roadmap" class="block text-gray-300 hover:text-fuchsia-500 transition-colors">Roadmap</a>
+                <a href="#equipe" class="block text-gray-300 hover:text-fuchsia-500 transition-colors">Equipe</a>
+            </nav>
         </div>
     </header>
 
     <main>
-
         <section id="inicio" class="relative bg-hero-pattern min-h-screen flex items-center justify-center">
             <div class="absolute inset-0 bg-black/80"></div>
             <div class="relative z-10 container mx-auto px-6 text-center">
-                <h1 class="text-5xl md:text-7xl font-extrabold text-white leading-tight tracking-tighter">
+                <h1 class="text-4xl sm:text-5xl md:text-7xl font-extrabold text-white leading-tight tracking-tighter">
                     O Futuro do <span class="animated-gradient-text">Perfect World</span><br/> Está em Nossas Mãos.
                 </h1>
-                <p class="mt-8 text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
+                <p class="mt-8 text-md sm:text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
                     Uma oportunidade única de investimento em um servidor com infraestrutura profissional, foco em monetização sustentável e uma comunidade próspera.
                 </p>
                 <div class="mt-12">
-                    <a href="#proposta" class="px-10 py-4 bg-gradient-to-r from-fuchsia-600 to-cyan-500 hover:from-fuchsia-700 hover:to-cyan-600 text-white font-bold rounded-full shadow-lg transition-transform transform hover:scale-105 glowing-border">
+                    <a href="#proposta" class="px-8 py-3 sm:px-10 sm:py-4 bg-gradient-to-r from-fuchsia-600 to-cyan-500 hover:from-fuchsia-700 hover:to-cyan-600 text-white font-bold rounded-full shadow-lg transition-transform transform hover:scale-105 glowing-border">
                         Conhecer a Proposta
                     </a>
                 </div>
             </div>
         </section>
 
-        <section id="sobre" class="py-24 md:py-32 bg-gray-900">
-            <div class="container mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
-                <div>
-                    <h2 class="text-4xl md:text-5xl font-bold text-white">O Mercado: O que é <br><span class="animated-gradient-text">Perfect World?</span></h2>
-                    <p class="mt-8 text-lg text-gray-400">
+        <section id="sobre" class="py-20 sm:py-24 md:py-32 bg-gray-900">
+            <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 md:gap-16 items-center">
+                <div class="order-2 md:order-1">
+                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white">O Mercado: O que é <br><span class="animated-gradient-text">Perfect World?</span></h2>
+                    <p class="mt-6 sm:mt-8 text-base sm:text-lg text-gray-400">
                         Perfect World é um MMORPG com mais de 15 anos de história e sucesso global. Baseado em mitologia chinesa, é renomado por sua liberdade de exploração, um sistema de voo inovador e uma das mais profundas ferramentas de personalização de personagens do gênero.
                         <br><br>
                         Sua longevidade prova a existência de uma base de fãs dedicada e um mercado consumidor consolidado. Estamos investindo em um produto com validação de mercado e um público-alvo bem definido.
                     </p>
                 </div>
-                <div class="flex justify-center">
+                <div class="flex justify-center order-1 md:order-2">
                     <div class="relative">
-                        <img src="wallpaper.png" alt="Arte conceitual do Perfect World" class="rounded-2xl shadow-2xl w-full max-w-md object-cover aspect-square glowing-border">
+                        <img src="wallpaper.png" alt="Arte conceitual do Perfect World" class="rounded-2xl shadow-2xl w-full max-w-sm sm:max-w-md object-cover aspect-square glowing-border">
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="proposta" class="py-24 md:py-32 bg-black">
+        <section id="proposta" class="py-20 sm:py-24 md:py-32 bg-black">
             <div class="container mx-auto px-6 text-center">
-                <h2 class="text-4xl md:text-5xl font-bold text-white">Nossa Visão: Um Servidor <span class="animated-gradient-text">Incomparável</span></h2>
-                <p class="mt-6 text-lg text-gray-400 max-w-4xl mx-auto">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white">Nossa Visão: Um Servidor <span class="animated-gradient-text">Incomparável</span></h2>
+                <p class="mt-6 text-base sm:text-lg text-gray-400 max-w-4xl mx-auto">
                     Construímos uma experiência que vai além de um simples servidor. Nosso foco é a estabilidade, o crescimento da comunidade e a criação de valor através de um modelo de negócio transparente e lucrativo.
                 </p>
-                <div class="grid md:grid-cols-3 gap-8 mt-20">
-                    <div class="bg-gray-900/50 p-8 rounded-xl border border-fuchsia-500/30 shadow-lg glowing-border-hover transition-all duration-300">
-                        <h3 class="text-2xl font-semibold text-fuchsia-500">Infraestrutura Profissional</h3>
-                        <p class="mt-4 text-gray-400">
+                <div class="grid md:grid-cols-3 gap-8 mt-16 sm:mt-20">
+                    <div class="bg-gray-900/50 p-6 sm:p-8 rounded-xl border border-fuchsia-500/30 shadow-lg glowing-border-hover transition-all duration-300">
+                        <h3 class="text-xl sm:text-2xl font-semibold text-fuchsia-500">Infraestrutura Profissional</h3>
+                        <p class="mt-4 text-gray-400 text-sm sm:text-base">
                             Investimento em servidores dedicados de alta performance e proteções Anti-DDoS robustas. A arquitetura será globalmente escalável para penetrar múltiplos mercados e sustentar o crescimento de jogadores.
                         </p>
                     </div>
-                    <div class="bg-gray-900/50 p-8 rounded-xl border border-cyan-500/30 shadow-lg glowing-border-hover transition-all duration-300">
-                        <h3 class="text-2xl font-semibold text-cyan-400">Monetização Estratégica</h3>
-                        <p class="mt-4 text-gray-400">
+                    <div class="bg-gray-900/50 p-6 sm:p-8 rounded-xl border border-cyan-500/30 shadow-lg glowing-border-hover transition-all duration-300">
+                        <h3 class="text-xl sm:text-2xl font-semibold text-cyan-400">Monetização Estratégica</h3>
+                        <p class="mt-4 text-gray-400 text-sm sm:text-base">
                             Modelo 'Fair-to-Play' com fluxo de receita diversificado: cosméticos, Passe de Batalha sazonal e venda oficial de 'gold'. A receita será reinvestida na evolução contínua do produto.
                         </p>
                     </div>
-                    <div class="bg-gray-900/50 p-8 rounded-xl border border-fuchsia-500/30 shadow-lg glowing-border-hover transition-all duration-300">
-                        <h3 class="text-2xl font-semibold text-fuchsia-500">Comunidade Engajada</h3>
-                        <p class="mt-4 text-gray-400">
+                    <div class="bg-gray-900/50 p-6 sm:p-8 rounded-xl border border-fuchsia-500/30 shadow-lg glowing-border-hover transition-all duration-300">
+                        <h3 class="text-xl sm:text-2xl font-semibold text-fuchsia-500">Comunidade Engajada</h3>
+                        <p class="mt-4 text-gray-400 text-sm sm:text-base">
                             Equipe profissional de gerenciamento de comunidade e operações. Execução de um roadmap estratégico de eventos e conteúdo para maximizar a retenção e o engajamento dos usuários.
                         </p>
                     </div>
                 </div>
             </div>
         </section>
-        
-        <section id="monetizacao" class="py-24 md:py-32 bg-gray-900">
+
+        <section id="monetizacao" class="py-20 sm:py-24 md:py-32 bg-gray-900">
             <div class="container mx-auto px-6">
-                <div class="text-center mb-20">
-                    <h2 class="text-4xl md:text-5xl font-bold text-white">Estratégia de Monetização e <span class="animated-gradient-text">Crescimento</span></h2>
-                    <p class="mt-6 text-lg text-gray-400 max-w-4xl mx-auto">
+                <div class="text-center mb-16 sm:mb-20">
+                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white">Estratégia de Monetização e <span class="animated-gradient-text">Crescimento</span></h2>
+                    <p class="mt-6 text-base sm:text-lg text-gray-400 max-w-4xl mx-auto">
                         Nosso modelo de negócio é baseado em pilares de receita diversificados, garantindo um fluxo de caixa estável e previsível.
                     </p>
                 </div>
                 <div class="grid lg:grid-cols-2 gap-12 items-start">
-                    <div class="bg-black p-8 rounded-xl glowing-border">
-                        <h3 class="text-3xl font-semibold animated-gradient-text">Modelo "Free-to-Play, Pay-for-Fun"</h3>
-                        <ul class="mt-8 space-y-6 text-gray-300">
+                    <div class="bg-black p-6 sm:p-8 rounded-xl glowing-border">
+                        <h3 class="text-2xl sm:text-3xl font-semibold animated-gradient-text">Modelo "Free-to-Play, Pay-for-Fun"</h3>
+                        <ul class="mt-6 sm:mt-8 space-y-5 text-gray-300 text-sm sm:text-base">
                             <li class="flex items-start"><span class="text-cyan-400 mr-3 mt-1">✓</span><span><strong>Venda de Itens Cosméticos:</strong> Roupas, montarias e voos exclusivos. Nossos artistas criam itens que a comunidade deseja.</span></li>
                             <li class="flex items-start"><span class="text-cyan-400 mr-3 mt-1">✓</span><span><strong>Itens de Conveniência:</strong> Pacotes de buffs, teletransportes, itens para acelerar a progressão de forma não-essencial.</span></li>
                             <li class="flex items-start"><span class="text-cyan-400 mr-3 mt-1">✓</span><span><strong>Passe de Batalha (Battle Pass):</strong> Um sistema sazonal que oferece recompensas exclusivas e mantém os jogadores engajados.</span></li>
                         </ul>
                     </div>
-                    <div class="bg-black p-8 rounded-xl glowing-border">
-                        <h3 class="text-3xl font-semibold animated-gradient-text">Projeções de Crescimento</h3>
-                        <p class="mt-6 text-gray-400">
+                    <div class="bg-black p-6 sm:p-8 rounded-xl glowing-border">
+                        <h3 class="text-2xl sm:text-3xl font-semibold animated-gradient-text">Projeções de Crescimento</h3>
+                        <p class="mt-4 sm:mt-6 text-gray-400 text-sm sm:text-base">
                             Com um investimento inicial a partir de <strong>R$ 20.000</strong>, nosso foco é construir uma base de jogadores sólida. Projeções para os primeiros 12 meses:
                         </p>
-                        <ul class="mt-8 space-y-4 text-gray-300">
-                            <li class="flex justify-between items-center bg-gray-800/50 p-4 rounded-md"><span>Usuários Ativos Mensais (MAU):</span><span class="font-bold text-white text-lg">1.000 - 2.000</span></li>
-                            <li class="flex justify-between items-center bg-gray-800/50 p-4 rounded-md"><span>Ticket Médio (ARPU):</span><span class="font-bold text-white text-lg">~ $50 USD / R$ 275 BRL</span></li>
-                            <li class="flex justify-between items-center bg-gray-800/50 p-4 rounded-md"><span>Taxa de Conversão para Pagantes:</span><span class="font-bold text-white text-lg">10% - 15%</span></li>
+                        <ul class="mt-6 sm:mt-8 space-y-4 text-gray-300 text-sm sm:text-base">
+                            <li class="flex flex-col sm:flex-row justify-between items-start sm:items-center bg-gray-800/50 p-4 rounded-md"><span>Usuários Ativos Mensais (MAU):</span><span class="font-bold text-white text-lg mt-1 sm:mt-0">1.000 - 2.000</span></li>
+                            <li class="flex flex-col sm:flex-row justify-between items-start sm:items-center bg-gray-800/50 p-4 rounded-md"><span>Ticket Médio (ARPU):</span><span class="font-bold text-white text-lg mt-1 sm:mt-0">~ $50 USD / R$ 275 BRL</span></li>
+                            <li class="flex flex-col sm:flex-row justify-between items-start sm:items-center bg-gray-800/50 p-4 rounded-md"><span>Taxa de Conversão para Pagantes:</span><span class="font-bold text-white text-lg mt-1 sm:mt-0">10% - 15%</span></li>
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="financas" class="py-24 md:py-32 bg-black">
+        <section id="financas" class="py-20 sm:py-24 md:py-32 bg-black">
             <div class="container mx-auto px-6 text-center">
-                <h2 class="text-4xl md:text-5xl font-bold text-white">Projeções <span class="animated-gradient-text">Financeiras</span></h2>
-                <p class="mt-6 text-lg text-gray-400 max-w-4xl mx-auto">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white">Projeções <span class="animated-gradient-text">Financeiras</span></h2>
+                <p class="mt-6 text-base sm:text-lg text-gray-400 max-w-4xl mx-auto">
                     Nossas projeções indicam uma rentabilidade sólida com um gasto médio de <strong>50 (USD/EUR) por jogador</strong>. Os valores abaixo refletem o lucro líquido para diferentes cenários.
                 </p>
-                <div class="mt-16 overflow-x-auto">
+                <div class="mt-12 sm:mt-16 overflow-x-auto">
                     <table class="min-w-full bg-transparent text-left">
                         <thead class="border-b border-fuchsia-500/30">
                             <tr>
-                                <th class="px-6 py-4 font-semibold text-fuchsia-500 uppercase tracking-wider">Cenário (Jogadores)</th>
-                                <th class="px-6 py-4 font-semibold text-fuchsia-500 uppercase tracking-wider">Lucro Líquido Mensal</th>
-                                <th class="px-6 py-4 font-semibold text-fuchsia-500 uppercase tracking-wider">Lucro Líquido Anual</th>
+                                <th class="px-4 sm:px-6 py-4 font-semibold text-fuchsia-500 uppercase tracking-wider text-sm">Cenário</th>
+                                <th class="px-4 sm:px-6 py-4 font-semibold text-fuchsia-500 uppercase tracking-wider text-sm">Lucro Mensal</th>
+                                <th class="px-4 sm:px-6 py-4 font-semibold text-fuchsia-500 uppercase tracking-wider text-sm">Lucro Anual</th>
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-gray-800">
                             <tr class="hover:bg-fuchsia-500/10">
-                                <td class="px-6 py-5 font-bold text-white text-xl">100</td>
-                                <td class="px-6 py-5 font-medium text-green-400 text-lg">$5,000 USD / €5,000 EUR</td>
-                                <td class="px-6 py-5 font-medium text-green-400 text-lg">$60,000 USD / €60,000 EUR</td>
+                                <td class="px-4 sm:px-6 py-5 font-bold text-white text-lg sm:text-xl">100</td>
+                                <td class="px-4 sm:px-6 py-5 font-medium text-green-400 text-base sm:text-lg">$5,000</td>
+                                <td class="px-4 sm:px-6 py-5 font-medium text-green-400 text-base sm:text-lg">$60,000</td>
                             </tr>
                             <tr class="hover:bg-fuchsia-500/10">
-                                <td class="px-6 py-5 font-bold text-white text-xl">500</td>
-                                <td class="px-6 py-5 font-medium text-green-400 text-lg">$25,000 USD / €25,000 EUR</td>
-                                <td class="px-6 py-5 font-medium text-green-400 text-lg">$300,000 USD / €300,000 EUR</td>
+                                <td class="px-4 sm:px-6 py-5 font-bold text-white text-lg sm:text-xl">500</td>
+                                <td class="px-4 sm:px-6 py-5 font-medium text-green-400 text-base sm:text-lg">$25,000</td>
+                                <td class="px-4 sm:px-6 py-5 font-medium text-green-400 text-base sm:text-lg">$300,000</td>
                             </tr>
                             <tr class="hover:bg-fuchsia-500/10">
-                                <td class="px-6 py-5 font-bold text-white text-xl">1000</td>
-                                <td class="px-6 py-5 font-medium text-green-400 text-lg">$50,000 USD / €50,000 EUR</td>
-                                <td class="px-6 py-5 font-medium text-green-400 text-lg">$600,000 USD / €600,000 EUR</td>
+                                <td class="px-4 sm:px-6 py-5 font-bold text-white text-lg sm:text-xl">1000</td>
+                                <td class="px-4 sm:px-6 py-5 font-medium text-green-400 text-base sm:text-lg">$50,000</td>
+                                <td class="px-4 sm:px-6 py-5 font-medium text-green-400 text-base sm:text-lg">$600,000</td>
                             </tr>
                         </tbody>
                     </table>
@@ -199,47 +211,47 @@
             </div>
         </section>
 
-        <section id="lucro-brl" class="py-24 md:py-32 bg-gray-900">
+        <section id="lucro-brl" class="py-20 sm:py-24 md:py-32 bg-gray-900">
             <div class="container mx-auto px-6">
                 <div class="grid lg:grid-cols-5 gap-12 items-start">
                     <div class="lg:col-span-3">
-                        <h2 class="text-4xl font-bold text-white mb-6">Projeções de Lucro em <span class="animated-gradient-text">Real (BRL)</span></h2>
-                        <p class="text-lg text-gray-400 mb-10">
+                        <h2 class="text-3xl sm:text-4xl font-bold text-white mb-6">Projeções de Lucro em <span class="animated-gradient-text">Real (BRL)</span></h2>
+                        <p class="text-base sm:text-lg text-gray-400 mb-10">
                             Estimativas de lucro convertidas para o Real, utilizando a taxa de câmbio de <strong>R$ 5,20 por dólar</strong>.
                         </p>
                         <div class="overflow-x-auto">
                             <table class="min-w-full bg-transparent text-left">
                                 <thead class="border-b border-cyan-500/30">
                                     <tr>
-                                        <th class="px-6 py-4 font-semibold text-cyan-400 uppercase tracking-wider">Jogadores</th>
-                                        <th class="px-6 py-4 font-semibold text-cyan-400 uppercase tracking-wider">Mensal (BRL)</th>
-                                        <th class="px-6 py-4 font-semibold text-cyan-400 uppercase tracking-wider">Anual (BRL)</th>
+                                        <th class="px-4 sm:px-6 py-4 font-semibold text-cyan-400 uppercase tracking-wider text-sm">Jogadores</th>
+                                        <th class="px-4 sm:px-6 py-4 font-semibold text-cyan-400 uppercase tracking-wider text-sm">Mensal (BRL)</th>
+                                        <th class="px-4 sm:px-6 py-4 font-semibold text-cyan-400 uppercase tracking-wider text-sm">Anual (BRL)</th>
                                     </tr>
                                 </thead>
                                 <tbody class="divide-y divide-gray-800">
                                     <tr class="hover:bg-cyan-500/10">
-                                        <td class="px-6 py-4 font-bold text-white text-lg">100</td>
-                                        <td class="px-6 py-4 font-medium text-green-400">R$ 26.000,00</td>
-                                        <td class="px-6 py-4 font-medium text-green-400">R$ 312.000,00</td>
+                                        <td class="px-4 sm:px-6 py-4 font-bold text-white text-base sm:text-lg">100</td>
+                                        <td class="px-4 sm:px-6 py-4 font-medium text-green-400">R$ 26.000</td>
+                                        <td class="px-4 sm:px-6 py-4 font-medium text-green-400">R$ 312.000</td>
                                     </tr>
                                     <tr class="hover:bg-cyan-500/10">
-                                        <td class="px-6 py-4 font-bold text-white text-lg">500</td>
-                                        <td class="px-6 py-4 font-medium text-green-400">R$ 130.000,00</td>
-                                        <td class="px-6 py-4 font-medium text-green-400">R$ 1.560.000,00</td>
+                                        <td class="px-4 sm:px-6 py-4 font-bold text-white text-base sm:text-lg">500</td>
+                                        <td class="px-4 sm:px-6 py-4 font-medium text-green-400">R$ 130.000</td>
+                                        <td class="px-4 sm:px-6 py-4 font-medium text-green-400">R$ 1.560.000</td>
                                     </tr>
                                     <tr class="hover:bg-cyan-500/10">
-                                        <td class="px-6 py-4 font-bold text-white text-lg">1000</td>
-                                        <td class="px-6 py-4 font-medium text-green-400">R$ 260.000,00</td>
-                                        <td class="px-6 py-4 font-medium text-green-400">R$ 3.120.000,00</td>
+                                        <td class="px-4 sm:px-6 py-4 font-bold text-white text-base sm:text-lg">1000</td>
+                                        <td class="px-4 sm:px-6 py-4 font-medium text-green-400">R$ 260.000</td>
+                                        <td class="px-4 sm:px-6 py-4 font-medium text-green-400">R$ 3.120.000</td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
                     </div>
                     <div id="conversor" class="lg:col-span-2">
-                        <div class="bg-black p-8 rounded-xl glowing-border sticky top-28">
-                            <h3 class="text-2xl font-bold text-white mb-2">Conversor de Lucro para BRL</h3>
-                            <p class="text-gray-400 mb-6">Estime o lucro total em Reais (BRL).</p>
+                        <div class="bg-black p-6 sm:p-8 rounded-xl glowing-border sticky top-28">
+                            <h3 class="text-xl sm:text-2xl font-bold text-white mb-2">Conversor de Lucro para BRL</h3>
+                            <p class="text-gray-400 mb-6 text-sm sm:text-base">Estime o lucro total em Reais (BRL).</p>
                             <div class="space-y-4">
                                 <div>
                                     <label for="inputUSD" class="block text-sm text-gray-400 font-medium mb-2">Valor em Dólar (USD)</label>
@@ -253,7 +265,7 @@
                             <button onclick="converterMoedas()" class="mt-6 w-full py-3 bg-gradient-to-r from-fuchsia-600 to-cyan-500 hover:from-fuchsia-700 hover:to-cyan-600 text-white font-bold rounded-lg transition-colors">Converter para BRL</button>
                             <div class="mt-6 text-center">
                                 <p class="text-gray-400">Valor Total em Real (BRL):</p>
-                                <p id="totalBRL" class="text-4xl font-extrabold text-green-400 mt-1">R$ 0,00</p>
+                                <p id="totalBRL" class="text-3xl sm:text-4xl font-extrabold text-green-400 mt-1">R$ 0,00</p>
                                 <p class="text-xs text-gray-500 mt-2">*Taxas: 1 USD = 5.20 BRL, 1 EUR = 5.60 BRL.</p>
                             </div>
                         </div>
@@ -262,40 +274,40 @@
             </div>
         </section>
 
-        <section id="roadmap" class="py-24 md:py-32 bg-black">
+        <section id="roadmap" class="py-20 sm:py-24 md:py-32 bg-black">
             <div class="container mx-auto px-6">
-                <div class="text-center mb-20">
-                    <h2 class="text-4xl md:text-5xl font-bold text-white">Nosso Roteiro para o <span class="animated-gradient-text">Sucesso</span></h2>
-                    <p class="mt-6 text-lg text-gray-400 max-w-4xl mx-auto">
+                <div class="text-center mb-16 sm:mb-20">
+                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white">Nosso Roteiro para o <span class="animated-gradient-text">Sucesso</span></h2>
+                    <p class="mt-6 text-base sm:text-lg text-gray-400 max-w-4xl mx-auto">
                         Nossos planos são projetados para um crescimento contínuo, garantindo uma experiência de jogo sempre renovada e atraente.
                     </p>
                 </div>
                 <div class="relative max-w-3xl mx-auto">
-                    <div class="absolute left-1/2 top-0 h-full w-0.5 bg-gradient-to-b from-fuchsia-500 to-cyan-500 transform -translate-x-1/2"></div>
+                    <div class="absolute left-4 md:left-1/2 top-0 h-full w-0.5 bg-gradient-to-b from-fuchsia-500 to-cyan-500 md:transform md:-translate-x-1/2"></div>
                     
-                    <div class="relative mb-16">
-                        <div class="absolute left-1/2 top-4 w-5 h-5 bg-fuchsia-500 rounded-full transform -translate-x-1/2 border-4 border-black glowing-border"></div>
-                        <div class="md:ml-auto md:w-1/2 md:pl-16">
+                    <div class="relative mb-12 sm:mb-16">
+                        <div class="absolute left-4 top-1 w-5 h-5 bg-fuchsia-500 rounded-full transform -translate-x-1/2 border-4 border-black glowing-border md:left-1/2"></div>
+                        <div class="pl-12 md:pl-0 md:ml-auto md:w-1/2 md:pl-16">
                             <div class="bg-gray-900/50 p-6 rounded-lg border border-fuchsia-500/30">
-                                <h3 class="text-xl font-bold text-fuchsia-400">Fase 1: Lançamento e Estabilização</h3>
-                                <ul class="mt-4 space-y-2 text-gray-300">
-                                    <li class="flex items-center"><span class="text-green-400 mr-2">✓</span>Lançamento Beta e Feedback da Comunidade</li>
-                                    <li class="flex items-center"><span class="text-green-400 mr-2">✓</span>Otimização do Servidor para implementar melhorias</li>
-                                    <li class="flex items-center"><span class="text-green-400 mr-2">✓</span>Primeiros Eventos e Pacotes de Lançamento</li>
+                                <h3 class="text-lg sm:text-xl font-bold text-fuchsia-400">Fase 1: Lançamento e Estabilização</h3>
+                                <ul class="mt-4 space-y-2 text-gray-300 text-sm sm:text-base">
+                                    <li class="flex items-start"><span class="text-green-400 mr-2 mt-1">✓</span>Lançamento Beta e Feedback da Comunidade</li>
+                                    <li class="flex items-start"><span class="text-green-400 mr-2 mt-1">✓</span>Otimização do Servidor para implementar melhorias</li>
+                                    <li class="flex items-start"><span class="text-green-400 mr-2 mt-1">✓</span>Primeiros Eventos e Pacotes de Lançamento</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
 
                     <div class="relative">
-                        <div class="absolute left-1/2 top-4 w-5 h-5 bg-cyan-500 rounded-full transform -translate-x-1/2 border-4 border-black glowing-border"></div>
-                        <div class="md:mr-auto md:w-1/2 md:pr-16">
+                        <div class="absolute left-4 top-1 w-5 h-5 bg-cyan-500 rounded-full transform -translate-x-1/2 border-4 border-black glowing-border md:left-1/2"></div>
+                        <div class="pl-12 md:pl-0 md:mr-auto md:w-1/2 md:pr-16 md:text-right">
                             <div class="bg-gray-900/50 p-6 rounded-lg border border-cyan-500/30">
-                                <h3 class="text-xl font-bold text-cyan-400">Fase 2: Expansão e Crescimento</h3>
-                                <ul class="mt-4 space-y-2 text-gray-300">
-                                    <li class="flex items-center"><span class="text-green-400 mr-2">✓</span>Lançamento oficial do servidor e abertura da pré-season</li>
-                                    <li class="flex items-center"><span class="text-green-400 mr-2">✓</span>Abertura da Season oficial e inicio das Guerras de Territórios</li>
-                                    <li class="flex items-center"><span class="text-green-400 mr-2">✓</span>Encerramento da Season e premiações exclusivas</li>
+                                <h3 class="text-lg sm:text-xl font-bold text-cyan-400">Fase 2: Expansão e Crescimento</h3>
+                                <ul class="mt-4 space-y-2 text-gray-300 text-sm sm:text-base">
+                                    <li class="flex items-start md:justify-end"><span class="text-green-400 mr-2 md:mr-0 md:ml-2 mt-1 order-1 md:order-2">✓</span><span class="order-2 md:order-1">Lançamento oficial do servidor e abertura da pré-season</span></li>
+                                    <li class="flex items-start md:justify-end"><span class="text-green-400 mr-2 md:mr-0 md:ml-2 mt-1 order-1 md:order-2">✓</span><span class="order-2 md:order-1">Abertura da Season oficial e inicio das Guerras de Territórios</span></li>
+                                    <li class="flex items-start md:justify-end"><span class="text-green-400 mr-2 md:mr-0 md:ml-2 mt-1 order-1 md:order-2">✓</span><span class="order-2 md:order-1">Encerramento da Season e premiações exclusivas</span></li>
                                 </ul>
                             </div>
                         </div>
@@ -304,65 +316,74 @@
             </div>
         </section>
 
-        <section id="equipe" class="py-24 md:py-32 bg-gray-900">
+        <section id="equipe" class="py-20 sm:py-24 md:py-32 bg-gray-900">
             <div class="container mx-auto px-6 text-center">
-                <h2 class="text-4xl md:text-5xl font-bold text-white">A Equipe por Trás do <span class="animated-gradient-text">Projeto</span></h2>
-                <p class="mt-6 text-lg text-gray-400 max-w-4xl mx-auto">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white">A Equipe por Trás do <span class="animated-gradient-text">Projeto</span></h2>
+                <p class="mt-6 text-base sm:text-lg text-gray-400 max-w-4xl mx-auto">
                     Time com profissionais competentes e com experiência no cenário de Perfect World.
                 </p>
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-20">
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-16 sm:mt-20">
                     <div class="bg-black p-6 rounded-xl border border-fuchsia-500/30 text-center transform hover:-translate-y-2 transition-transform duration-300 glowing-border-hover">
-                        <h3 class="text-xl font-bold text-white">Lucas Correia</h3>
+                        <h3 class="text-lg sm:text-xl font-bold text-white">Lucas Correia</h3>
                         <p class="text-fuchsia-400 text-sm mt-1">Fundador & Desenvolvedor Principal</p>
                         <p class="mt-4 text-gray-400 text-sm">Especialista em desenvolvimento de servidores. Conhece a fundo a comunidade e suas necessidades.</p>
                     </div>
                     <div class="bg-black p-6 rounded-xl border border-cyan-500/30 text-center transform hover:-translate-y-2 transition-transform duration-300 glowing-border-hover">
-                        <h3 class="text-xl font-bold text-white">Nome do Sócio</h3>
+                        <h3 class="text-lg sm:text-xl font-bold text-white">Nome do Sócio</h3>
                         <p class="text-cyan-400 text-sm mt-1">CFO & Estratégia de Negócios</p>
                         <p class="mt-4 text-gray-400 text-sm">Experiência em gestão financeira e análise de mercado. Garante a rentabilidade do negócio a longo prazo.</p>
                     </div>
                     <div class="bg-black p-6 rounded-xl border border-fuchsia-500/30 text-center transform hover:-translate-y-2 transition-transform duration-300 glowing-border-hover">
-                        <h3 class="text-xl font-bold text-white">Nome do Designer</h3>
+                        <h3 class="text-lg sm:text-xl font-bold text-white">Nome do Designer</h3>
                         <p class="text-fuchsia-400 text-sm mt-1">Gerente de Comunidade & Marketing</p>
                         <p class="mt-4 text-gray-400 text-sm">Especialista em engajamento e marketing digital para construir uma comunidade ativa e leal.</p>
                     </div>
                     <div class="bg-black p-6 rounded-xl border border-cyan-500/30 text-center transform hover:-translate-y-2 transition-transform duration-300 glowing-border-hover">
-                        <h3 class="text-xl font-bold text-white">Nome do Analista</h3>
+                        <h3 class="text-lg sm:text-xl font-bold text-white">Nome do Analista</h3>
                         <p class="text-cyan-400 text-sm mt-1">Analista de Dados</p>
                         <p class="mt-4 text-gray-400 text-sm">Responsável por analisar o comportamento dos jogadores para otimizar as estratégias de crescimento.</p>
                     </div>
                     <div class="bg-black p-6 rounded-xl border border-fuchsia-500/30 text-center transform hover:-translate-y-2 transition-transform duration-300 glowing-border-hover">
-                        <h3 class="text-xl font-bold text-white">Nome do Especialista</h3>
+                        <h3 class="text-lg sm:text-xl font-bold text-white">Nome do Especialista</h3>
                         <p class="text-fuchsia-400 text-sm mt-1">Especialista em Suporte</p>
                         <p class="mt-4 text-gray-400 text-sm">Dedicado a fornecer suporte rápido e eficiente, garantindo a melhor experiência para os jogadores.</p>
                     </div>
                     <div class="bg-black p-6 rounded-xl border border-cyan-500/30 text-center transform hover:-translate-y-2 transition-transform duration-300 glowing-border-hover">
-                        <h3 class="text-xl font-bold text-white">Nome do Artista</h3>
+                        <h3 class="text-lg sm:text-xl font-bold text-white">Nome do Artista</h3>
                         <p class="text-cyan-400 text-sm mt-1">Artista 3D & Efeitos Visuais</p>
                         <p class="mt-4 text-gray-400 text-sm">Criação de itens cosméticos e efeitos visuais exclusivos que enriquecem a experiência de jogo.</p>
                     </div>
                 </div>
             </div>
         </section>
-
     </main>
 
     <script>
+        // Função para conversão de moedas (sem alterações)
         function converterMoedas() {
-            // Taxas de câmbio
             const taxaUSD = 5.20;
             const taxaEUR = 5.60;
-
-            // Obter os valores dos inputs
             const inputUSD = parseFloat(document.getElementById('inputUSD').value) || 0;
             const inputEUR = parseFloat(document.getElementById('inputEUR').value) || 0;
-
-            // Calcular o total em BRL
             const totalBRL = (inputUSD * taxaUSD) + (inputEUR * taxaEUR);
-
-            // Exibir o resultado formatado
             document.getElementById('totalBRL').innerText = `R$ ${totalBRL.toFixed(2).replace('.', ',')}`;
         }
+
+        // Script para menu mobile
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Opcional: Fechar menu ao clicar em um link
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
     </script>
 </body>
 </html>
