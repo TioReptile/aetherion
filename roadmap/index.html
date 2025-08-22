@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aetherion PWI - Roadmap Progressivo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        @keyframes gradient-animation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .animated-gradient-text {
+            background: linear-gradient(90deg, #FF00FF, #00FFFF, #FF00FF);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradient-animation 4s ease infinite;
+        }
+        .bg-hero-pattern {
+            background-image: url('https://images.unsplash.com/photo-1621243805814-d0216664e16d?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%D%D');
+            background-size: cover;
+            background-position: center;
+        }
+        .glowing-border {
+            box-shadow: 0 0 15px rgba(255, 0, 255, 0.5), 0 0 30px rgba(0, 255, 255, 0.5);
+        }
+        .glowing-border-hover:hover {
+            box-shadow: 0 0 20px rgba(255, 0, 255, 0.7), 0 0 40px rgba(0, 255, 255, 0.7);
+        }
+    </style>
+</head>
+<body class="bg-black text-gray-200 antialiased">
+
+    <header class="sticky top-0 z-50 bg-black/80 backdrop-blur-md border-b border-fuchsia-500/30">
+        <div class="container mx-auto px-6 py-2 flex justify-between items-center">
+            <a href="#inicio" class="flex items-center">
+                <img src="logo.png" alt="Aetherion PWI Logo" class="h-24 w-auto">
+            </a>
+            <nav class="hidden md:flex items-center space-x-6 text-sm font-medium text-gray-300">
+                <a href="#projeto" data-key="navProject" class="hover:text-fuchsia-500 transition-colors">O Projeto</a>
+                <a href="#pilares" data-key="navPillars" class="hover:text-fuchsia-500 transition-colors">Pilares</a>
+                <a href="#informacoes" data-key="navInfo" class="hover:text-fuchsia-500 transition-colors">Informações</a>
+                <a href="#economia" data-key="navCoin" class="hover:text-fuchsia-500 transition-colors">Moeda Aetherion</a>
+                <a href="#mineracao" data-key="navMining" class="hover:text-fuchsia-500 transition-colors">Mineração</a>
+                <a href="#beneficios" data-key="navBenefits" class="hover:text-fuchsia-500 transition-colors">Benefícios</a>
+                <a href="#roadmap" data-key="navRoadmap" class="hover:text-fuchsia-500 transition-colors">Roadmap</a>
+                <a href="#equipe" data-key="navTeam" class="hover:text-fuchsia-500 transition-colors">Equipe</a>
+                <div class="relative">
+                    <button id="desktop-lang-button" class="flex items-center space-x-1 focus:outline-none">
+                        <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9V3m-9 9h18" /></svg>
+                        <span id="current-lang-desktop">PT-BR</span>
+                    </button>
+                    <div id="desktop-lang-menu" class="absolute right-0 mt-2 w-32 bg-black/80 backdrop-blur-md border border-fuchsia-500/30 rounded-lg shadow-lg hidden">
+                        <a href="#" data-lang="pt" class="lang-option block px-4 py-2 text-sm text-gray-300 hover:bg-fuchsia-500/20">Português</a>
+                        <a href="#" data-lang="en" class="lang-option block px-4 py-2 text-sm text-gray-300 hover:bg-fuchsia-500/20">English</a>
+                        <a href="#" data-lang="es" class="lang-option block px-4 py-2 text-sm text-gray-300 hover:bg-fuchsia-500/20">Español</a>
+                        <a href="#" data-lang="ru" class="lang-option block px-4 py-2 text-sm text-gray-300 hover:bg-fuchsia-500/20">Русский</a>
+                    </div>
+                </div>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden">
+            <nav class="flex flex-col space-y-4 px-6 pb-4 text-sm font-medium text-gray-300">
+                <a href="#projeto" data-key="navProjectMobile" class="hover:text-fuchsia-500 transition-colors">O Projeto</a>
+                <a href="#pilares" data-key="navPillarsMobile" class="hover:text-fuchsia-500 transition-colors">Pilares</a>
+                <a href="#informacoes" data-key="navInfoMobile" class="hover:text-fuchsia-500 transition-colors">Informações</a>
+                <a href="#economia" data-key="navCoinMobile" class="hover:text-fuchsia-500 transition-colors">Moeda Aetherion</a>
+                <a href="#mineracao" data-key="navMiningMobile" class="hover:text-fuchsia-500 transition-colors">Mineração</a>
+                <a href="#beneficios" data-key="navBenefitsMobile" class="hover:text-fuchsia-500 transition-colors">Benefícios</a>
+                <a href="#roadmap" data-key="navRoadmapMobile" class="hover:text-fuchsia-500 transition-colors">Roadmap</a>
+                <a href="#equipe" data-key="navTeamMobile" class="hover:text-fuchsia-500 transition-colors">Equipe</a>
+                <div class="pt-4 border-t border-fuchsia-500/30">
+                     <span class="text-fuchsia-400" data-key="navLangMobile">Idioma:</span>
+                     <div class="flex flex-col items-start space-y-2 mt-2">
+                        <a href="#" data-lang="pt" class="lang-option block text-sm text-gray-300 hover:text-white">Português</a>
+                        <a href="#" data-lang="en" class="lang-option block text-sm text-gray-300 hover:text-white">English</a>
+                        <a href="#" data-lang="es" class="lang-option block text-sm text-gray-300 hover:text-white">Español</a>
+                        <a href="#" data-lang="ru" class="lang-option block text-sm text-gray-300 hover:text-white">Русский</a>
+                     </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <section id="inicio" class="relative bg-hero-pattern min-h-screen flex items-center justify-center">
+            <div class="absolute inset-0 bg-black/80"></div>
+            <div class="relative z-10 container mx-auto px-6 text-center">
+                <h1 class="text-5xl md:text-7xl font-extrabold text-white leading-tight tracking-tighter" data-key="heroTitle">
+                    Aetherion: A Saga Progressiva  <span class="animated-gradient-text">Perfect World</span>
+                </h1>
+                <p class="mt-8 text-lg md:text-xl text-gray-300 max-w-3xl mx-auto" data-key="heroSubtitle">
+                    Reviva a nostalgia do clássico e desbrave novas expansões em um servidor que evolui com você. Uma jornada focada na comunidade, com rates balanceadas e uma economia inovadora.
+                </p>
+                <div class="mt-12">
+                    <a href="#roadmap" class="px-10 py-4 bg-gradient-to-r from-fuchsia-600 to-cyan-500 hover:from-fuchsia-700 hover:to-cyan-600 text-white font-bold rounded-full shadow-lg transition-transform transform hover:scale-105 glowing-border" data-key="heroButton">
+                        Explore o Roadmap
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="projeto" class="py-24 md:py-32 bg-gray-900">
+            <div class="container mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-4xl md:text-5xl font-bold text-white" data-key="projectTitle">O Projeto: O que é <br><span class="animated-gradient-text">Aetherion PWI?</span></h2>
+                    <p class="mt-8 text-lg text-gray-400" data-key="projectDesc">
+                        Aetherion PWI nasce de um desejo de resgatar a verdadeira essência dos MMORPGs: a jornada. Em um cenário dominado por servidores de alta velocidade, propomos uma experiência diferente, com rates medium-baixas que valorizam cada conquista e fortalecem os laços da comunidade.
+                        <br><br>
+                        Nosso servidor é progressivo, começando pela era clássica de Perfect World e avançando através das expansões icônicas em um ritmo planejado. É a oportunidade perfeita para novos jogadores conhecerem a história desde o início e para os veteranos reviverem seus momentos mais memoráveis.
+                    </p>
+                </div>
+                <div class="flex justify-center">
+                    <div class="relative">
+                        <img src="logo.png" alt="Aetherion PWI Logo" class="rounded-2xl shadow-2xl w-full max-w-md object-cover aspect-square glowing-border">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="pilares" class="py-24 md:py-32 bg-black">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-4xl md:text-5xl font-bold text-white" data-key="pillarsTitle">Os Pilares de <span class="animated-gradient-text">Aetherion</span></h2>
+                <p class="mt-6 text-lg text-gray-400 max-w-4xl mx-auto" data-key="pillarsSubtitle">
+                    Nossa filosofia é construída sobre três pilares fundamentais que garantem uma experiência de jogo justa, dinâmica e duradoura.
+                </p>
+                <div class="grid md:grid-cols-3 gap-8 mt-20">
+                    <div class="bg-gray-900/50 p-8 rounded-xl border border-fuchsia-500/30 shadow-lg glowing-border-hover transition-all duration-300">
+                        <h3 class="text-2xl font-semibold text-fuchsia-500" data-key="pillar1Title">Servidor Progressivo</h3>
+                        <p class="mt-4 text-gray-400" data-key="pillar1Desc">
+                            Comece na versão clássica e avance conosco. Novas expansões, classes, mapas e desafios serão desbloqueados em temporadas, criando um sentimento constante de descoberta e evolução para todos.
+                        </p>
+                    </div>
+                    <div class="bg-gray-900/50 p-8 rounded-xl border border-cyan-500/30 shadow-lg glowing-border-hover transition-all duration-300">
+                        <h3 class="text-2xl font-semibold text-cyan-400" data-key="pillar2Title">Economia Única</h3>
+                        <p class="mt-4 text-gray-400" data-key="pillar2Desc">
+                            A moeda Aetherion substitui o gold e é obtida por "mineração" no jogo. Ela move todo o mercado, da GSHOP ao comércio de contas, criando uma economia vibrante e controlada pelos jogadores.
+                        </p>
+                    </div>
+                    <div class="bg-gray-900/50 p-8 rounded-xl border border-fuchsia-500/30 shadow-lg glowing-border-hover transition-all duration-300">
+                        <h3 class="text-2xl font-semibold text-fuchsia-500" data-key="pillar3Title">Experiência Valorizada</h3>
+                        <p class="mt-4 text-gray-400" data-key="pillar3Desc">
+                            Com rates medium-baixas, cada nível, item e amizade são conquistados. Incentivamos o jogo em grupo, a exploração e a dedicação, tornando cada momento no Pan Gu verdadeiramente significativo.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="informacoes" class="py-24 md:py-32 bg-gray-900">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-4xl md:text-5xl font-bold text-white" data-key="infoTitle">Informações <span class="animated-gradient-text">Técnicas</span></h2>
+                <p class="mt-6 text-lg text-gray-400 max-w-4xl mx-auto" data-key="infoSubtitle">
+                    Confira os detalhes, rates e sistemas que definem a sua jornada em Aetherion.
+                </p>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-20 text-left">
+                    <div class="bg-black/50 p-6 rounded-xl border border-fuchsia-500/30">
+                        <h3 class="text-2xl font-semibold text-fuchsia-500 mb-4" data-key="infoRatesTitle">Rates do Servidor</h3>
+                        <ul class="space-y-2 text-gray-300">
+                            <li><strong data-key="infoRateExp">Experiência:</strong> <span class="text-white font-semibold">5x</span></li>
+                            <li><strong data-key="infoRateSp">Alma:</strong> <span class="text-white font-semibold">10x</span></li>
+                            <li><strong data-key="infoRateCoin">Moeda (Aetherion):</strong> <span class="text-white font-semibold" data-key="infoRateCoinValue">Balanceada</span></li>
+                            <li><strong data-key="infoRateDrop">Drop:</strong> <span class="text-white font-semibold">2x</span></li>
+                            <li><strong data-key="infoRateQuest">Quests (EXP):</strong> <span class="text-white font-semibold">2x</span></li>
+                        </ul>
+                    </div>
+                    <div class="bg-black/50 p-6 rounded-xl border border-cyan-500/30">
+                        <h3 class="text-2xl font-semibold text-cyan-400 mb-4" data-key="infoVersionTitle">Versão do Jogo</h3>
+                        <ul class="space-y-2 text-gray-300">
+                            <li><strong data-key="infoVersionInitial">Versão Inicial:</strong> <span class="text-white font-semibold">1.3.6 (Clássico)</span></li>
+                            <li><strong data-key="infoVersionUpdates">Expansões:</strong> <span class="text-white font-semibold" data-key="infoVersionUpdatesValue">Progressivas</span></li>
+                            <li><strong data-key="infoVersionClient">Cliente:</strong> <span class="text-white font-semibold" data-key="infoVersionClientValue">Customizado</span></li>
+                            <li><strong data-key="infoVersionUI">Interface:</strong> <span class="text-white font-semibold" data-key="infoVersionUIValue">Moderna e Otimizada</span></li>
+                        </ul>
+                    </div>
+                    <div class="bg-black/50 p-6 rounded-xl border border-fuchsia-500/30">
+                        <h3 class="text-2xl font-semibold text-fuchsia-500 mb-4" data-key="infoSystemsTitle">Sistemas Principais</h3>
+                        <ul class="space-y-2 text-gray-300" data-key="infoSystemsList">
+                           <li><span class="text-cyan-400">✓</span> Servidor Progressivo</li>
+                           <li><span class="text-cyan-400">✓</span> Moeda Única Aetherion</li>
+                           <li><span class="text-cyan-400">✓</span> Guerras Territoriais (TW)</li>
+                           <li><span class="text-cyan-400">✓</span> Eventos Diários e Sazonais</li>
+                           <li><span class="text-cyan-400">✓</span> Sistema Anti Pay-to-Win</li>
+                        </ul>
+                    </div>
+                    <div class="bg-black/50 p-6 rounded-xl border border-cyan-500/30">
+                        <h3 class="text-2xl font-semibold text-cyan-400 mb-4" data-key="infoSheetTitle">Ficha Técnica</h3>
+                        <ul class="space-y-2 text-gray-300">
+                            <li><strong data-key="infoSheetClasses">Classes Iniciais:</strong> <span class="text-white font-semibold">6 (WR, MG, EA, EP, WB, WF)</span></li>
+                            <li><strong data-key="infoSheetLvlCap">Level Cap Inicial:</strong> <span class="text-white font-semibold">99</span></li>
+                            <li><strong data-key="infoSheetCult">Cultivo Máximo:</strong> <span class="text-white font-semibold">God / Evil 3</span></li>
+                            <li><strong data-key="infoSheetProt">Proteção:</strong> <span class="text-white font-semibold" data-key="infoSheetProtValue">Anti-DDoS Profissional</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="economia" class="py-24 md:py-32 bg-black">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-20">
+                    <h2 class="text-4xl md:text-5xl font-bold text-white" data-key="coinTitle">Aetherion: A Economia <span class="animated-gradient-text">Revolucionária</span></h2>
+                    <p class="mt-6 text-lg text-gray-400 max-w-4xl mx-auto" data-key="coinSubtitle">
+                        Esqueça o gold. Apresentamos um sistema monetário único, "minerável" e central para todas as transações do servidor.
+                    </p>
+                </div>
+                <div class="grid lg:grid-cols-2 gap-12 items-start">
+                    <div class="bg-gray-900/50 p-8 rounded-xl glowing-border">
+                        <h3 class="text-3xl font-semibold animated-gradient-text flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 mr-4" viewBox="0 0 24 24" fill="url(#aetherion-gradient)">
+                                <defs>
+                                    <linearGradient id="aetherion-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <stop offset="0%" style="stop-color:#FF00FF;"></stop>
+                                        <stop offset="100%" style="stop-color:#00FFFF;"></stop>
+                                    </linearGradient>
+                                </defs>
+                                <path d="M12 1.155l-9.165 9.165 2.75 12.525 6.415-4.155 6.415 4.155 2.75-12.525L12 1.155zm0 4.33l4.08 4.08-1.22 5.56-2.86-1.85-2.86 1.85-1.22-5.56 4.08-4.08z"></path>
+                            </svg>
+                            <span data-key="coinWhatIs">O Que é o Aetherion?</span>
+                        </h3>
+                        <p class="mt-6 text-gray-400" data-key="coinDesc">
+                           Aetherion é a moeda soberana e **única** de nosso universo, substituindo completamente o sistema de gold tradicional. Inspirada em moedas digitais, ela pode ser **"minerada"**, permitindo que os jogadores farmem frações da moeda através de dedicação e esforço contínuo em atividades específicas do jogo.
+                        </p>
+                        <ul class="mt-8 space-y-6 text-gray-300" data-key="coinFeatures">
+                            <li class="flex items-start"><span class="text-cyan-400 mr-3 mt-1">✓</span><span><strong>Substituição Total do Gold:</strong> Uma única moeda para governar todas as transações, simplificando a economia.</span></li>
+                            <li class="flex items-start"><span class="text-cyan-400 mr-3 mt-1">✓</span><span><strong>Farm de Mineração:</strong> O valor é gerado pelo seu tempo e esforço em jogo, não apenas pela sorte em drops.</span></li>
+                            <li class="flex items-start"><span class="text-cyan-400 mr-3 mt-1">✓</span><span><strong>Controle de Inflação:</strong> Um sistema projetado para ser estável e previsível, protegendo o poder de compra dos jogadores.</span></li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-900/50 p-8 rounded-xl glowing-border">
+                        <h3 class="text-3xl font-semibold animated-gradient-text" data-key="coinMarketTitle">Mercado & Utilidades</h3>
+                        <p class="mt-6 text-gray-400" data-key="coinMarketDesc">
+                           Com Aetherion, você tem acesso a um mercado vibrante e a todas as funcionalidades premium do servidor, tudo sem sair do jogo.
+                        </p>
+                        
+                        <div class="my-8 bg-black/50 p-6 rounded-lg border border-cyan-500/30">
+                            <h4 class="text-xl font-bold text-cyan-400 mb-3" data-key="coinDonationTitle">Apoie o Servidor (Doação)</h4>
+                            <p class="text-gray-400 text-sm mb-4" data-key="coinDonationDesc">Para manter nossa infraestrutura e desenvolvimento, oferecemos a opção de obter Aetherion através de doações. Esta é uma forma de apoiar o projeto e uma alternativa conveniente ao método principal de mineração no jogo.</p>
+                            <div class="bg-gray-800/50 p-3 rounded-md text-center">
+                                <span class="font-semibold text-white" data-key="coinDonationRate">Taxa de Câmbio: 100 Aetherion = $1 USD / €1 EUR</span>
+                            </div>
+                        </div>
+
+                        <ul class="space-y-4 text-gray-300" data-key="coinMarketList">
+                            <li class="flex flex-col sm:flex-row justify-between items-start sm:items-center bg-gray-800/50 p-4 rounded-md">
+                                <span class="font-bold text-white text-lg mb-2 sm:mb-0">Comércio de Contas</span>
+                                <span class="text-sm text-gray-400 text-right">Plataforma segura para comprar e vender personagens.</span>
+                            </li>
+                            <li class="flex flex-col sm:flex-row justify-between items-start sm:items-center bg-gray-800/50 p-4 rounded-md">
+                                <span class="font-bold text-white text-lg mb-2 sm:mb-0">GSHOP Exclusiva</span>
+                                <span class="text-sm text-gray-400 text-right">Acesso a cosméticos e itens de conveniência.</span>
+                            </li>
+                            <li class="flex flex-col sm:flex-row justify-between items-start sm:items-center bg-gray-800/50 p-4 rounded-md">
+                                <span class="font-bold text-white text-lg mb-2 sm:mb-0">Passe de Batalha</span>
+                                <span class="text-sm text-gray-400 text-right">Desbloqueie recompensas sazonais jogando.</span>
+                            </li>
+                             <li class="flex flex-col sm:flex-row justify-between items-start sm:items-center bg-gray-800/50 p-4 rounded-md">
+                                <span class="font-bold text-white text-lg mb-2 sm:mb-0">Itens Raros</span>
+                                <span class="text-sm text-gray-400 text-right">Adquira voos e montarias exclusivos.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="mineracao" class="py-24 md:py-32 bg-gray-900">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-4xl md:text-5xl font-bold text-white" data-key="miningTitle">Minerando Aetherion: <span class="animated-gradient-text">O Seu Esforço Recompensado</span></h2>
+                <p class="mt-6 text-lg text-gray-400 max-w-4xl mx-auto" data-key="miningSubtitle">
+                    Aetherion não é encontrado, é forjado. Através de sua dedicação diária, você acumula frações da moeda que move o nosso mundo.
+                </p>
+                <div class="grid md:grid-cols-3 gap-8 mt-20">
+                    <div class="bg-black/50 p-8 rounded-xl border border-fuchsia-500/30 shadow-lg glowing-border-hover transition-all duration-300 text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto mb-4 text-fuchsia-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+                        </svg>
+                        <h3 class="text-2xl font-semibold text-fuchsia-500" data-key="mining1Title">Missões Diárias</h3>
+                        <p class="mt-4 text-gray-400" data-key="mining1Desc">
+                            Complete suas tarefas diárias no mundo de Pan Gu. Cada missão concluída contribui com frações de Aetherion para sua carteira, recompensando sua consistência.
+                        </p>
+                    </div>
+                    <div class="bg-black/50 p-8 rounded-xl border border-cyan-500/30 shadow-lg glowing-border-hover transition-all duration-300 text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto mb-4 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                        <h3 class="text-2xl font-semibold text-cyan-400" data-key="mining2Title">Desafios em Dungeons</h3>
+                        <p class="mt-4 text-gray-400" data-key="mining2Desc">
+                            Enfrente os desafios mais perigosos nas profundezas das dungeons (DGs). Derrotar chefes e concluir instâncias garante porções de Aetherion para os participantes.
+                        </p>
+                    </div>
+                    <div class="bg-black/50 p-8 rounded-xl border border-fuchsia-500/30 shadow-lg glowing-border-hover transition-all duration-300 text-center">
+                       <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto mb-4 text-fuchsia-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.539 1.118l-3.975-2.888a1 1 0 00-1.176 0l-3.975 2.888c-.783.57-1.838-.196-1.539-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.783-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+                        </svg>
+                        <h3 class="text-2xl font-semibold text-fuchsia-500" data-key="mining3Title">Eventos do Servidor</h3>
+                        <p class="mt-4 text-gray-400" data-key="mining3Desc">
+                           Participe ativamente dos eventos diários e sazonais. Sua presença e desempenho são recompensados com Aetherion, tornando cada evento uma oportunidade valiosa.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="beneficios" class="py-24 md:py-32 bg-black">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-20">
+                    <h2 class="text-4xl md:text-5xl font-bold text-white" data-key="benefitsTitle">Sistemas de <span class="animated-gradient-text">Benefícios</span></h2>
+                    <p class="mt-6 text-lg text-gray-400 max-w-4xl mx-auto" data-key="benefitsSubtitle">
+                        Programas exclusivos para fortalecer a comunidade, recompensar sua lealdade e impulsionar o crescimento do Aetherion.
+                    </p>
+                </div>
+                <div class="space-y-16">
+                    <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+                        <div class="md:w-1/3 flex justify-center">
+                            <div class="p-6 bg-gray-900/50 rounded-2xl border border-cyan-500/30 glowing-border">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="md:w-2/3 text-center md:text-left">
+                            <h3 class="text-3xl font-bold text-cyan-400" data-key="benefit1Title">Migração de Guilds</h3>
+                            <p class="mt-4 text-lg text-gray-400" data-key="benefit1Desc">
+                                Traga sua guild para o Aetherion! Oferecemos pacotes de benefícios iniciais, incluindo Aetherion e itens de suporte, para guilds estabelecidas que desejam iniciar sua jornada conosco.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col md:flex-row-reverse items-center gap-8 md:gap-12">
+                        <div class="md:w-1/3 flex justify-center">
+                             <div class="p-6 bg-gray-900/50 rounded-2xl border border-fuchsia-500/30 glowing-border">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 text-fuchsia-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.636 18.364a9 9 0 0112.728 0M18.364 5.636a9 9 0 010 12.728m-12.728 0a9 9 0 010-12.728" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="md:w-2/3 text-center md:text-left">
+                            <h3 class="text-3xl font-bold text-fuchsia-500" data-key="benefit2Title">Divulgação Social</h3>
+                            <p class="mt-4 text-lg text-gray-400" data-key="benefit2Desc">
+                                Ajude a espalhar a palavra! Compartilhe nosso conteúdo em suas redes sociais e seja recompensado com Aetherion por ajudar a nossa comunidade a crescer.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+                        <div class="md:w-1/3 flex justify-center">
+                            <div class="p-6 bg-gray-900/50 rounded-2xl border border-cyan-500/30 glowing-border">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="md:w-2/3 text-center md:text-left">
+                            <h3 class="text-3xl font-bold text-cyan-400" data-key="benefit3Title">Indicação Premiada</h3>
+                            <p class="mt-4 text-lg text-gray-400" data-key="benefit3Desc">
+                                Jogue com seus amigos! Convide novos jogadores para o servidor e, quando eles atingirem determinados objetivos, tanto você quanto seu amigo receberão um bônus em Aetherion.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col md:flex-row-reverse items-center gap-8 md:gap-12">
+                        <div class="md:w-1/3 flex justify-center">
+                             <div class="p-6 bg-gray-900/50 rounded-2xl border border-fuchsia-500/30 glowing-border">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 text-fuchsia-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="md:w-2/3 text-center md:text-left">
+                            <h3 class="text-3xl font-bold text-fuchsia-500" data-key="benefit4Title">Votação Premiada</h3>
+                            <p class="mt-4 text-lg text-gray-400" data-key="benefit4Desc">
+                               Seu voto fortalece o servidor! Vote diariamente em nossos parceiros de ranking e receba frações de Aetherion como agradecimento por seu apoio contínuo.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+                        <div class="md:w-1/3 flex justify-center">
+                            <div class="p-6 bg-gray-900/50 rounded-2xl border border-cyan-500/30 glowing-border">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="md:w-2/3 text-center md:text-left">
+                            <h3 class="text-3xl font-bold text-cyan-400" data-key="benefit5Title">Criadores de Conteúdo</h3>
+                            <p class="mt-4 text-lg text-gray-400" data-key="benefit5Desc">
+                               É streamer ou youtuber? Oferecemos um programa de parceria com recompensas mensais em Aetherion e suporte de divulgação para quem cria conteúdo sobre o Aetherion PWI.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="roadmap" class="py-24 md:py-32 bg-gray-900">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-20">
+                    <h2 class="text-4xl md:text-5xl font-bold text-white" data-key="roadmapTitle">Nossa Jornada <span class="animated-gradient-text">Progressiva</span></h2>
+                    <p class="mt-6 text-lg text-gray-400 max-w-4xl mx-auto" data-key="roadmapSubtitle">
+                        A evolução de Aetherion será dividida em Eras. Cada Era trará uma grande expansão, novos desafios e um novo capítulo na história do nosso mundo.
+                    </p>
+                </div>
+                <div class="relative max-w-3xl mx-auto">
+                    <div class="absolute left-2.5 md:left-1/2 top-0 h-full w-0.5 bg-gradient-to-b from-fuchsia-500 to-cyan-500 transform md:-translate-x-1/2"></div>
+                    
+                    <div class="relative mb-16">
+                        <div class="absolute left-2.5 top-1 w-5 h-5 bg-fuchsia-500 rounded-full transform -translate-x-1/2 border-4 border-black glowing-border md:left-1/2"></div>
+                        <div class="pl-10 md:pl-0 md:ml-auto md:w-1/2 md:pl-16">
+                            <div class="bg-black/50 p-6 rounded-lg border border-fuchsia-500/30">
+                                <h3 class="text-xl font-bold text-fuchsia-400" data-key="era1Title">Era 1: O Início Clássico</h3>
+                                <ul class="mt-4 space-y-2 text-gray-300" data-key="era1List">
+                                    <li class="flex items-center"><span class="text-green-400 mr-2">✓</span>Classes: Humanos, Alados e Selvagens</li>
+                                    <li class="flex items-center"><span class="text-green-400 mr-2">✓</span>Level Cap Inicial: 99</li>
+                                    <li class="flex items-center"><span class="text-green-400 mr-2">✓</span>Foco em Dungeons Clássicas (Dusk, Frost)</li>
+                                    <li class="flex items-center"><span class="text-green-400 mr-2">✓</span>Guerras Territoriais (TW) semanais</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="relative mb-16">
+                        <div class="absolute left-2.5 top-1 w-5 h-5 bg-cyan-500 rounded-full transform -translate-x-1/2 border-4 border-black glowing-border md:left-1/2"></div>
+                        <div class="pl-10 md:pl-0 md:mr-auto md:w-1/2 md:pr-16">
+                            <div class="bg-black/50 p-6 rounded-lg border border-cyan-500/30">
+                                <h3 class="text-xl font-bold text-cyan-400" data-key="era2Title">Era 2: A Ascensão dos Abissais</h3>
+                                <ul class="mt-4 space-y-2 text-gray-300" data-key="era2List">
+                                    <li class="flex items-center"><span class="text-green-400 mr-2">✓</span>Nova Raça: Abissais (Mercenário e Espiritualista)</li>
+                                    <li class="flex items-center"><span class="text-green-400 mr-2">✓</span>Aumento do Level Cap</li>
+                                    <li class="flex items-center"><span class="text-green-400 mr-2">✓</span>Novas Dungeons e Mundo Submarino</li>
+                                    <li class="flex items-center"><span class="text-green-400 mr-2">✓</span>Implementação do sistema de Morai</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="relative">
+                        <div class="absolute left-2.5 top-1 w-5 h-5 bg-fuchsia-500 rounded-full transform -translate-x-1/2 border-4 border-black glowing-border md:left-1/2"></div>
+                        <div class="pl-10 md:pl-0 md:ml-auto md:w-1/2 md:pl-16">
+                            <div class="bg-black/50 p-6 rounded-lg border border-fuchsia-500/30">
+                                <h3 class="text-xl font-bold text-fuchsia-400" data-key="era3Title">Era 3: O Despertar do Submundo</h3>
+                                <ul class="mt-4 space-y-2 text-gray-300" data-key="era3List">
+                                    <li class="flex items-center"><span class="text-green-400 mr-2">✓</span>Nova Raça: Guardiões (Arcano e Místico)</li>
+                                    <li class="flex items-center"><span class="text-green-400 mr-2">✓</span>Mundo Primitivo e novas Habilidades</li>
+                                    <li class="flex items-center"><span class="text-green-400 mr-2">✓</span>Catedral e novos desafios PvE</li>
+                                    <li class="flex items-center"><span class="text-green-400 mr-2">✓</span>Evolução de equipamentos e armas</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="relative mt-16">
+                        <div class="absolute left-2.5 top-1 w-5 h-5 bg-cyan-500 rounded-full transform -translate-x-1/2 border-4 border-black glowing-border md:left-1/2"></div>
+                        <div class="pl-10 md:pl-0 md:mr-auto md:w-1/2 md:pr-16">
+                            <div class="bg-black/50 p-6 rounded-lg border border-cyan-500/30">
+                                <h3 class="text-xl font-bold text-cyan-400" data-key="eraFutureTitle">Eras Futuras...</h3>
+                                <p class="mt-4 text-gray-300" data-key="eraFutureDesc">A jornada não para aqui. Expansões como Retalhadores e Sombras serão planejadas e implementadas com base no feedback da comunidade e na progressão natural do servidor.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="equipe" class="py-24 md:py-32 bg-black">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-4xl md:text-5xl font-bold text-white" data-key="teamTitle">A Equipe por Trás do <span class="animated-gradient-text">Projeto</span></h2>
+                <p class="mt-6 text-lg text-gray-400 max-w-4xl mx-auto" data-key="teamSubtitle">
+                    Somos jogadores apaixonados e profissionais dedicados, com vasta experiência no universo de Perfect World, comprometidos em construir o servidor que sempre sonhamos em jogar.
+                </p>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-20">
+                    <div class="bg-gray-900/50 p-6 rounded-xl border border-fuchsia-500/30 text-center">
+                        <h3 class="text-xl font-bold text-white">Lucas Correia</h3>
+                        <p class="text-fuchsia-400 text-sm mt-1" data-key="teamMember1Role">Fundador & Desenvolvedor .data</p>
+                        <p class="mt-4 text-gray-400 text-sm" data-key="teamMember1Desc">Especialista em desenvolvimento de servidores. Conhecendo a fundo a comunidade e suas necessidades.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-6 rounded-xl border border-cyan-500/30 text-center">
+                        <h3 class="text-xl font-bold text-white">Thiago Lorenzetti</h3>
+                        <p class="text-cyan-400 text-sm mt-1" data-key="teamMember2Role">Investidor e Gestor de Negócios</p>
+                        <p class="mt-4 text-gray-400 text-sm" data-key="teamMember2Desc">Experiência em gestão financeira. Garante a rentabilidade do negócio a longo prazo.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-6 rounded-xl border border-fuchsia-500/30 text-center">
+                        <h3 class="text-xl font-bold text-white">Vinicius Franco</h3>
+                        <p class="text-fuchsia-400 text-sm mt-1" data-key="teamMember3Role">Gerente de Projeto e Sites</p>
+                        <p class="mt-4 text-gray-400 text-sm" data-key="teamMember3Desc">Ampla experieñcia em games, Responsável por atualizações e melhorias em sites e sistemas.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-6 rounded-xl border border-cyan-500/30 text-center">
+                        <h3 class="text-xl font-bold text-white">Welinton Júnior</h3>
+                        <p class="text-cyan-400 text-sm mt-1" data-key="teamMember4Role">Desenvolvedor Principal Src</p>
+                        <p class="mt-4 text-gray-400 text-sm" data-key="teamMember4Desc">Responsável por código atualizações e desenvolvimento geral do servidor, programação e engenharia reversa</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-6 rounded-xl border border-fuchsia-500/30 text-center">
+                        <h3 class="text-xl font-bold text-white">Felipe Sierra</h3>
+                        <p class="text-fuchsia-400 text-sm mt-1" data-key="teamMember5Role">Especialista em Suporte e Comunidade</p>
+                        <p class="mt-4 text-gray-400 text-sm" data-key="teamMember5Desc">Dedicado a fornecer suporte rápido e eficiente, garantindo a melhor experiência para os jogadores.</p>
+                    </div>
+                    <div class="bg-gray-900/50 p-6 rounded-xl border border-cyan-500/30 text-center">
+                        <h3 class="text-xl font-bold text-white">Reborn Design</h3>
+                        <p class="text-cyan-400 text-sm mt-1" data-key="teamMember6Role">Web Designer</p>
+                        <p class="mt-4 text-gray-400 text-sm" data-key="teamMember6Desc">Responsável pela criação de material visual exclusivo para o marketing do servidor, imagens, backgrounds etc.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        // TRANSLATION SCRIPT (Conteúdo omitido para economizar espaço, mas está no código)
+        const translations = {
+             // English
+            en: {
+                navProject: "The Project", navPillars: "Pillars", navInfo: "Information", navCoin: "Aetherion Coin", navMining: "Mining", navBenefits: "Benefits", navRoadmap: "Roadmap", navTeam: "Team",
+                navProjectMobile: "The Project", navPillarsMobile: "Pillars", navInfoMobile: "Information", navCoinMobile: "Aetherion Coin", navMiningMobile: "Mining", navBenefitsMobile: "Benefits", navRoadmapMobile: "Roadmap", navTeamMobile: "Team", navLangMobile: "Language:",
+                heroTitle: "Aetherion: The Progressive Saga of <span class='animated-gradient-text'>Perfect World</span>",
+                heroSubtitle: "Relive the nostalgia of the classic and brave new expansions on a server that evolves with you. A journey focused on the community, with balanced rates and an innovative economy.",
+                heroButton: "Explore the Roadmap",
+                projectTitle: "The Project: What is <br><span class='animated-gradient-text'>Aetherion PWI?</span>",
+                projectDesc: "Aetherion PWI was born from a desire to rescue the true essence of MMORPGs: the journey. In a landscape dominated by high-speed servers, we propose a different experience, with low-medium rates that value each achievement and strengthen community bonds.<br><br>Our server is progressive, starting from the classic era of Perfect World and advancing through iconic expansions at a planned pace. It's the perfect opportunity for new players to learn the story from the beginning and for veterans to relive their most memorable moments.",
+                pillarsTitle: "The Pillars of <span class='animated-gradient-text'>Aetherion</span>",
+                pillarsSubtitle: "Our philosophy is built on three fundamental pillars that ensure a fair, dynamic, and lasting gaming experience.",
+                pillar1Title: "Progressive Server", pillar1Desc: "Start in the classic version and advance with us. New expansions, classes, maps, and challenges will be unlocked in seasons, creating a constant sense of discovery and evolution for everyone.",
+                pillar2Title: "Unique Economy", pillar2Desc: "The Aetherion currency replaces gold and is obtained by 'mining' in the game. It drives the entire market, from the GSHOP to account trading, creating a vibrant economy controlled by the players.",
+                pillar3Title: "Valued Experience", pillar3Desc: "With low-medium rates, every level, item, and friendship is earned. We encourage group play, exploration, and dedication, making every moment in Pan Gu truly meaningful.",
+                infoTitle: "Technical <span class='animated-gradient-text'>Information</span>", infoSubtitle: "Check out the details, rates, and systems that define your journey in Aetherion.",
+                infoRatesTitle: "Server Rates", infoRateExp: "Experience:", infoRateSp: "Spirit:", infoRateCoin: "Coin (Aetherion):", infoRateCoinValue: "Balanced", infoRateDrop: "Drop:", infoRateQuest: "Quests (EXP):",
+                infoVersionTitle: "Game Version", infoVersionInitial: "Initial Version:", infoVersionUpdates: "Expansions:", infoVersionUpdatesValue: "Progressive", infoVersionClient: "Client:", infoVersionClientValue: "Customized", infoVersionUI: "Interface:", infoVersionUIValue: "Modern & Optimized",
+                infoSystemsTitle: "Main Systems", infoSystemsList: "<li><span class='text-cyan-400'>✓</span> Progressive Server</li><li><span class='text-cyan-400'>✓</span> Single Currency Aetherion</li><li><span class='text-cyan-400'>✓</span> Territory Wars (TW)</li><li><span class='text-cyan-400'>✓</span> Daily & Seasonal Events</li><li><span class='text-cyan-400'>✓</span> Anti Pay-to-Win System</li>",
+                infoSheetTitle: "Technical Sheet", infoSheetClasses: "Initial Classes:", infoSheetLvlCap: "Initial Level Cap:", infoSheetCult: "Max Cultivation:", infoSheetProt: "Protection:", infoSheetProtValue: "Professional Anti-DDoS",
+                coinTitle: "Aetherion: The Revolutionary <span class='animated-gradient-text'>Economy</span>", coinSubtitle: "Forget gold. We introduce a unique, 'mineable' monetary system, central to all server transactions.",
+                coinWhatIs: "What is Aetherion?", coinDesc: "Aetherion is the sovereign and **unique** currency of our universe, completely replacing the traditional gold system. Inspired by digital currencies, it can be **'mined'**, allowing players to farm fractions of the coin through dedication and continuous effort in specific in-game activities.",
+                coinFeatures: "<li class='flex items-start'><span class='text-cyan-400 mr-3 mt-1'>✓</span><span><strong>Total Gold Replacement:</strong> A single currency to rule all transactions, simplifying the economy.</span></li><li class='flex items-start'><span class='text-cyan-400 mr-3 mt-1'>✓</span><span><strong>Mining Farm:</strong> Value is generated by your time and effort in the game, not just by luck in drops.</span></li><li class='flex items-start'><span class='text-cyan-400 mr-3 mt-1'>✓</span><span><strong>Inflation Control:</strong> A system designed to be stable and predictable, protecting the players' purchasing power.</span></li>",
+                coinMarketTitle: "Market & Utilities", coinMarketDesc: "With Aetherion, you have access to a vibrant market and all the server's premium features, all without leaving the game.",
+                coinDonationTitle: "Support the Server (Donation)", coinDonationDesc: "To maintain our infrastructure and continuous development, we offer the option to obtain Aetherion through donations. This is a way to support the project and a convenient alternative to the main in-game mining method.",
+                coinDonationRate: "Exchange Rate: 100 Aetherion = $1 USD / €1 EUR",
+                coinMarketList: "<li class='flex flex-col sm:flex-row justify-between items-start sm:items-center bg-gray-800/50 p-4 rounded-md'><span class='font-bold text-white text-lg mb-2 sm:mb-0'>Account Trading</span><span class='text-sm text-gray-400 text-right'>Secure platform to buy and sell characters.</span></li><li class='flex flex-col sm:flex-row justify-between items-start sm:items-center bg-gray-800/50 p-4 rounded-md'><span class='font-bold text-white text-lg mb-2 sm:mb-0'>Exclusive GSHOP</span><span class='text-sm text-gray-400 text-right'>Access to cosmetics and convenience items.</span></li><li class='flex flex-col sm:flex-row justify-between items-start sm:items-center bg-gray-800/50 p-4 rounded-md'><span class='font-bold text-white text-lg mb-2 sm:mb-0'>Battle Pass</span><span class='text-sm text-gray-400 text-right'>Unlock seasonal rewards by playing.</span></li><li class='flex flex-col sm:flex-row justify-between items-start sm:items-center bg-gray-800/50 p-4 rounded-md'><span class='font-bold text-white text-lg mb-2 sm:mb-0'>Rare Items</span><span class='text-sm text-gray-400 text-right'>Acquire exclusive flights and mounts.</span></li>",
+                miningTitle: "Mining Aetherion: <span class='animated-gradient-text'>Your Effort Rewarded</span>", miningSubtitle: "Aetherion is not found, it is forged. Through your daily dedication, you accumulate fractions of the coin that moves our world.",
+                mining1Title: "Daily Quests", mining1Desc: "Complete your daily tasks in the world of Pan Gu. Each completed quest contributes fractions of Aetherion to your wallet, rewarding your consistency.",
+                mining2Title: "Dungeon Challenges", mining2Desc: "Face the most dangerous challenges in the depths of the dungeons (DGs). Defeating bosses and completing instances grants portions of Aetherion to the participants.",
+                mining3Title: "Server Events", mining3Desc: "Actively participate in daily and seasonal events. Your presence and performance are rewarded with Aetherion, making every event a valuable opportunity.",
+                benefitsTitle: "Benefit <span class='animated-gradient-text'>Systems</span>", benefitsSubtitle: "Exclusive programs to strengthen the community, reward your loyalty, and boost the growth of Aetherion.",
+                benefit1Title: "Guild Migration", benefit1Desc: "Bring your guild to Aetherion! We offer initial benefit packages, including Aetherion and support items, for established guilds wishing to start their journey with us.",
+                benefit2Title: "Social Promotion", benefit2Desc: "Help spread the word! Share our content on your social networks and be rewarded with Aetherion for helping our community grow.",
+                benefit3Title: "Referral Rewards", benefit3Desc: "Play with your friends! Invite new players to the server, and when they reach certain goals, both you and your friend will receive a bonus in Aetherion.",
+                benefit4Title: "Voting Rewards", benefit4Desc: "Your vote strengthens the server! Vote daily on our ranking partners and receive fractions of Aetherion as a thank you for your continued support.",
+                benefit5Title: "Content Creators", benefit5Desc: "Are you a streamer or YouTuber? We offer a partnership program with monthly rewards in Aetherion and promotional support for those who create content about Aetherion PWI.",
+                roadmapTitle: "Our Progressive <span class='animated-gradient-text'>Journey</span>", roadmapSubtitle: "The evolution of Aetherion will be divided into Eras. Each Era will bring a major expansion, new challenges, and a new chapter in the history of our world.",
+                era1Title: "Era 1: The Classic Beginning", era1List: "<li class='flex items-center'><span class='text-green-400 mr-2'>✓</span>Classes: Humans, Winged Elves, and Untamed</li><li class='flex items-center'><span class='text-green-400 mr-2'>✓</span>Initial Level Cap: 99</li><li class='flex items-center'><span class='text-green-400 mr-2'>✓</span>Focus on Classic Dungeons (Dusk, Frost)</li><li class='flex items-center'><span class='text-green-400 mr-2'>✓</span>Weekly Territory Wars (TW)</li>",
+                era2Title: "Era 2: Rise of the Tideborn", era2List: "<li class='flex items-center'><span class='text-green-400 mr-2'>✓</span>New Race: Tideborn (Assassin & Psychic)</li><li class='flex items-center'><span class='text-green-400 mr-2'>✓</span>Level Cap Increase</li><li class='flex items-center'><span class='text-green-400 mr-2'>✓</span>New Dungeons and Undersea World</li><li class='flex items-center'><span class='text-green-400 mr-2'>✓</span>Morai System Implementation</li>",
+                era3Title: "Era 3: Awakening of the Earthguard", era3List: "<li class='flex items-center'><span class='text-green-400 mr-2'>✓</span>New Race: Earthguard (Seeker & Mystic)</li><li class='flex items-center'><span class='text-green-400 mr-2'>✓</span>Primal World and new Skills</li><li class='flex items-center'><span class='text-green-400 mr-2'>✓</span>Cathedral and new PvE challenges</li><li class='flex items-center'><span class='text-green-400 mr-2'>✓</span>Evolution of gear and weapons</li>",
+                eraFutureTitle: "Future Eras...", eraFutureDesc: "The journey doesn't stop here. Expansions like Eclipse and Reawakening will be planned and implemented based on community feedback and the server's natural progression.",
+                teamTitle: "The Team Behind the <span class='animated-gradient-text'>Project</span>", teamSubtitle: "We are passionate players and dedicated professionals with extensive experience in the Perfect World universe, committed to building the server we've always dreamed of playing.",
+                teamMember1Role: "Founder & .data Developer", teamMember1Desc: "Server development specialist. Deeply understands the community and its needs.",
+                teamMember2Role: "Investor & Business Manager", teamMember2Desc: "Experience in financial management. Ensures the long-term profitability of the business.",
+                teamMember3Role: "Project & Website Manager", teamMember3Desc: "Extensive experience in gaming, responsible for updates and improvements to websites and systems.",
+                teamMember4Role: "Lead Src Developer", teamMember4Desc: "Responsible for code, updates, and general server development, programming, and reverse engineering.",
+                teamMember5Role: "Support & Community Specialist", teamMember5Desc: "Dedicated to providing fast and efficient support, ensuring the best experience for players.",
+                teamMember6Role: "Web Designer", teamMember6Desc: "Responsible for creating exclusive visual material for server marketing, images, backgrounds, etc."
+            },
+            // Spanish
+            es: {
+                navProject: "El Proyecto", navPillars: "Pilares", navInfo: "Información", navCoin: "Moneda Aetherion", navMining: "Minería", navBenefits: "Beneficios", navRoadmap: "Hoja de Ruta", navTeam: "Equipo",
+                navProjectMobile: "El Proyecto", navPillarsMobile: "Pilares", navInfoMobile: "Información", navCoinMobile: "Moneda Aetherion", navMiningMobile: "Minería", navBenefitsMobile: "Beneficios", navRoadmapMobile: "Hoja de Ruta", navTeamMobile: "Equipo", navLangMobile: "Idioma:",
+                heroTitle: "Aetherion: La Saga Progresiva de <span class='animated-gradient-text'>Perfect World</span>",
+                heroSubtitle: "Revive la nostalgia del clásico y explora nuevas expansiones en un servidor que evoluciona contigo. Un viaje centrado en la comunidad, con rates equilibrados y una economía innovadora.",
+                heroButton: "Explorar la Hoja de Ruta",
+                projectTitle: "El Proyecto: ¿Qué es <br><span class='animated-gradient-text'>Aetherion PWI?</span>",
+                projectDesc: "Aetherion PWI nace del deseo de rescatar la verdadera esencia de los MMORPG: el viaje. En un escenario dominado por servidores de alta velocidad, proponemos una experiencia diferente, con rates medio-bajos que valoran cada logro y fortalecen los lazos de la comunidad.<br><br>Nuestro servidor es progresivo, comenzando en la era clásica de Perfect World y avanzando a través de las expansiones icónicas a un ritmo planificado. Es la oportunidad perfecta para que los nuevos jugadores conozcan la historia desde el principio y para que los veteranos revivan sus momentos más memorables.",
+                pillarsTitle: "Los Pilares de <span class='animated-gradient-text'>Aetherion</span>",
+                pillarsSubtitle: "Nuestra filosofía se construye sobre tres pilares fundamentales que garantizan una experiencia de juego justa, dinámica y duradera.",
+                pillar1Title: "Servidor Progresivo", pillar1Desc: "Comienza en la versión clásica y avanza con nosotros. Nuevas expansiones, clases, mapas y desafíos se desbloquearán por temporadas, creando una sensación constante de descubrimiento y evolución para todos.",
+                pillar2Title: "Economía Única", pillar2Desc: "La moneda Aetherion reemplaza al oro y se obtiene mediante 'minería' en el juego. Mueve todo el mercado, desde la GSHOP hasta el comercio de cuentas, creando una economía vibrante controlada por los jugadores.",
+                pillar3Title: "Experiencia Valiosa", pillar3Desc: "Con rates medio-bajos, cada nivel, objeto y amistad se ganan. Fomentamos el juego en grupo, la exploración y la dedicación, haciendo que cada momento en Pan Gu sea verdaderamente significativo.",
+                infoTitle: "Información <span class='animated-gradient-text'>Técnica</span>", infoSubtitle: "Consulta los detalles, rates y sistemas que definen tu viaje en Aetherion.",
+                infoRatesTitle: "Rates del Servidor", infoRateExp: "Experiencia:", infoRateSp: "Alma:", infoRateCoin: "Moneda (Aetherion):", infoRateCoinValue: "Balanceada", infoRateDrop: "Drop:", infoRateQuest: "Misiones (EXP):",
+                infoVersionTitle: "Versión del Juego", infoVersionInitial: "Versión Inicial:", infoVersionUpdates: "Expansiones:", infoVersionUpdatesValue: "Progresivas", infoVersionClient: "Cliente:", infoVersionClientValue: "Personalizado", infoVersionUI: "Interfaz:", infoVersionUIValue: "Moderna y Optimizada",
+                infoSystemsTitle: "Sistemas Principales", infoSystemsList: "<li><span class='text-cyan-400'>✓</span> Servidor Progresivo</li><li><span class='text-cyan-400'>✓</span> Moneda Única Aetherion</li><li><span class='text-cyan-400'>✓</span> Guerras Territoriales (TW)</li><li><span class='text-cyan-400'>✓</span> Eventos Diarios y de Temporada</li><li><span class='text-cyan-400'>✓</span> Sistema Anti Pay-to-Win</li>",
+                infoSheetTitle: "Ficha Técnica", infoSheetClasses: "Clases Iniciales:", infoSheetLvlCap: "Nivel Máx. Inicial:", infoSheetCult: "Cultivo Máximo:", infoSheetProt: "Protección:", infoSheetProtValue: "Anti-DDoS Profesional",
+                coinTitle: "Aetherion: La Economía <span class='animated-gradient-text'>Revolucionaria</span>", coinSubtitle: "Olvida el oro. Presentamos un sistema monetario único, 'minable' y central para todas las transacciones del servidor.",
+                coinWhatIs: "¿Qué es Aetherion?", coinDesc: "Aetherion es la moneda soberana y **única** de nuestro universo, reemplazando por completo el sistema de oro tradicional. Inspirada en las monedas digitales, puede ser **'minada'**, permitiendo a los jugadores farmear fracciones de la moneda a través de la dedicación y el esfuerzo continuo en actividades específicas del juego.",
+                coinFeatures: "<li class='flex items-start'><span class='text-cyan-400 mr-3 mt-1'>✓</span><span><strong>Reemplazo Total del Oro:</strong> Una única moneda para gobernar todas las transacciones, simplificando la economía.</span></li><li class='flex items-start'><span class='text-cyan-400 mr-3 mt-1'>✓</span><span><strong>Farmeo por Minería:</strong> El valor se genera por tu tiempo y esfuerzo en el juego, no solo por la suerte en los drops.</span></li><li class='flex items-start'><span class='text-cyan-400 mr-3 mt-1'>✓</span><span><strong>Control de Inflación:</strong> Un sistema diseñado para ser estable y predecible, protegiendo el poder adquisitivo de los jugadores.</span></li>",
+                coinMarketTitle: "Mercado y Utilidades", coinMarketDesc: "Con Aetherion, tienes acceso a un mercado vibrante y a todas las funcionalidades premium del servidor, todo sin salir del juego.",
+                coinDonationTitle: "Apoya al Servidor (Donación)", coinDonationDesc: "Para mantener nuestra infraestructura y desarrollo continuo, ofrecemos la opción de obtener Aetherion a través de donaciones. Esta es una forma de apoyar el proyecto y una alternativa conveniente al método principal de minería en el juego.",
+                coinDonationRate: "Tasa de Cambio: 100 Aetherion = $1 USD / €1 EUR",
+                coinMarketList: "<li class='flex flex-col sm:flex-row justify-between items-start sm:items-center bg-gray-800/50 p-4 rounded-md'><span class='font-bold text-white text-lg mb-2 sm:mb-0'>Comercio de Cuentas</span><span class='text-sm text-gray-400 text-right'>Plataforma segura para comprar y vender personajes.</span></li><li class='flex flex-col sm:flex-row justify-between items-start sm:items-center bg-gray-800/50 p-4 rounded-md'><span class='font-bold text-white text-lg mb-2 sm:mb-0'>GSHOP Exclusiva</span><span class='text-sm text-gray-400 text-right'>Acceso a cosméticos y artículos de conveniencia.</span></li><li class='flex flex-col sm:flex-row justify-between items-start sm:items-center bg-gray-800/50 p-4 rounded-md'><span class='font-bold text-white text-lg mb-2 sm:mb-0'>Pase de Batalla</span><span class='text-sm text-gray-400 text-right'>Desbloquea recompensas de temporada jugando.</span></li><li class='flex flex-col sm:flex-row justify-between items-start sm:items-center bg-gray-800/50 p-4 rounded-md'><span class='font-bold text-white text-lg mb-2 sm:mb-0'>Artículos Raros</span><span class='text-sm text-gray-400 text-right'>Adquiere vuelos y monturas exclusivos.</span></li>",
+                miningTitle: "Minando Aetherion: <span class='animated-gradient-text'>Tu Esfuerzo Recompensado</span>", miningSubtitle: "Aetherion no se encuentra, se forja. A través de tu dedicación diaria, acumulas fracciones de la moneda que mueve nuestro mundo.",
+                mining1Title: "Misiones Diarias", mining1Desc: "Completa tus tareas diarias en el mundo de Pan Gu. Cada misión completada aporta fracciones de Aetherion a tu billetera, recompensando tu constancia.",
+                mining2Title: "Desafíos en Dungeons", mining2Desc: "Enfrenta los desafíos más peligrosos en las profundidades de las dungeons (DGs). Derrotar jefes y completar instancias otorga porciones de Aetherion a los participantes.",
+                mining3Title: "Eventos del Servidor", mining3Desc: "Participa activamente en los eventos diarios y de temporada. Tu presencia y rendimiento son recompensados con Aetherion, convirtiendo cada evento en una valiosa oportunidad.",
+                benefitsTitle: "Sistemas de <span class='animated-gradient-text'>Beneficios</span>", benefitsSubtitle: "Programas exclusivos para fortalecer la comunidad, recompensar tu lealtad e impulsar el crecimiento de Aetherion.",
+                benefit1Title: "Migración de Gremios", benefit1Desc: "¡Trae tu gremio a Aetherion! Ofrecemos paquetes de beneficios iniciales, incluyendo Aetherion y objetos de apoyo, para gremios establecidos que deseen comenzar su viaje con nosotros.",
+                benefit2Title: "Promoción Social", benefit2Desc: "¡Ayuda a correr la voz! Comparte nuestro contenido en tus redes sociales y sé recompensado con Aetherion por ayudar a nuestra comunidad a crecer.",
+                benefit3Title: "Recompensas por Referidos", benefit3Desc: "¡Juega con tus amigos! Invita a nuevos jugadores al servidor y, cuando alcancen ciertos objetivos, tanto tú como tu amigo recibirán una bonificación en Aetherion.",
+                benefit4Title: "Recompensas por Votar", benefit4Desc: "¡Tu voto fortalece al servidor! Vota diariamente en nuestros socios de ranking y recibe fracciones de Aetherion como agradecimiento por tu apoyo continuo.",
+                benefit5Title: "Creadores de Contenido", benefit5Desc: "¿Eres streamer o YouTuber? Ofrecemos un programa de socios con recompensas mensuales en Aetherion y apoyo promocional para quienes crean contenido sobre Aetherion PWI.",
+                roadmapTitle: "Nuestro Viaje <span class='animated-gradient-text'>Progresivo</span>", roadmapSubtitle: "La evolución de Aetherion se dividirá en Eras. Cada Era traerá una gran expansión, nuevos desafíos y un nuevo capítulo en la historia de nuestro mundo.",
+                era1Title: "Era 1: El Inicio Clásico", era1List: "<li class='flex items-center'><span class='text-green-400 mr-2'>✓</span>Clases: Humanos, Elfos Alados e Indómitos</li><li class='flex items-center'><span class='text-green-400 mr-2'>✓</span>Nivel Máx. Inicial: 99</li><li class='flex items-center'><span class='text-green-400 mr-2'>✓</span>Enfoque en Dungeons Clásicas (Dusk, Frost)</li><li class='flex items-center'><span class='text-green-400 mr-2'>✓</span>Guerras Territoriales (TW) semanales</li>",
+                era2Title: "Era 2: El Ascenso de los Mareadores", era2List: "<li class='flex items-center'><span class='text-green-400 mr-2'>✓</span>Nueva Raza: Mareadores (Asesino y Psíquico)</li><li class='flex items-center'><span class='text-green-400 mr-2'>✓</span>Aumento del Nivel Máximo</li><li class='flex items-center'><span class='text-green-400 mr-2'>✓</span>Nuevas Dungeons y Mundo Submarino</li><li class='flex items-center'><span class='text-green-400 mr-2'>✓</span>Implementación del sistema Morai</li>",
+                era3Title: "Era 3: El Despertar de los Guardianes", era3List: "<li class='flex items-center'><span class='text-green-400 mr-2'>✓</span>Nueva Raza: Guardianes (Buscador y Místico)</li><li class='flex items-center'><span class='text-green-400 mr-2'>✓</span>Mundo Primordial y nuevas Habilidades</li><li class='flex items-center'><span class='text-green-400 mr-2'>✓</span>Catedral y nuevos desafíos PvE</li><li class='flex items-center'><span class='text-green-400 mr-2'>✓</span>Evolución de equipo y armas</li>",
+                eraFutureTitle: "Eras Futuras...", eraFutureDesc: "El viaje no termina aquí. Expansiones como Eclipse y Renacimiento serán planificadas e implementadas en base a los comentarios de la comunidad y la progresión natural del servidor.",
+                teamTitle: "El Equipo Detrás del <span class='animated-gradient-text'>Proyecto</span>", teamSubtitle: "Somos jugadores apasionados y profesionales dedicados con una vasta experiencia en el universo de Perfect World, comprometidos a construir el servidor en el que siempre hemos soñado jugar.",
+                teamMember1Role: "Fundador y Desarrollador .data", teamMember1Desc: "Especialista en desarrollo de servidores. Conoce a fondo la comunidad y sus necesidades.",
+                teamMember2Role: "Inversor y Gerente de Negocios", teamMember2Desc: "Experiencia en gestión financiera. Garantiza la rentabilidad a largo plazo del negocio.",
+                teamMember3Role: "Gerente de Proyectos y Sitios Web", teamMember3Desc: "Amplia experiencia en juegos, responsable de actualizaciones y mejoras en sitios y sistemas.",
+                teamMember4Role: "Desarrollador Principal Src", teamMember4Desc: "Responsable del código, actualizaciones y desarrollo general del servidor, programación e ingeniería inversa.",
+                teamMember5Role: "Especialista en Soporte y Comunidad", teamMember5Desc: "Dedicado a proporcionar un soporte rápido y eficiente, garantizando la mejor experiencia para los jugadores.",
+                teamMember6Role: "Diseñador Web", teamMember6Desc: "Responsable de la creación de material visual exclusivo para el marketing del servidor, imágenes, fondos, etc."
+            },
+            // Russian
+            ru: {
+                navProject: "Проект", navPillars: "Принципы", navInfo: "Информация", navCoin: "Монета Aetherion", navMining: "Майнинг", navBenefits: "Преимущества", navRoadmap: "Дорожная карта", navTeam: "Команда",
+                navProjectMobile: "Проект", navPillarsMobile: "Принципы", navInfoMobile: "Информация", navCoinMobile: "Монета Aetherion", navMiningMobile: "Майнинг", navBenefitsMobile: "Преимущества", navRoadmapMobile: "Дорожная карта", navTeamMobile: "Команда", navLangMobile: "Язык:",
+                heroTitle: "Aetherion: Прогрессивная Сага о <span class='animated-gradient-text'>Perfect World</span>",
+                heroSubtitle: "Оживите ностальгию по классике и покоряйте новые дополнения на сервере, который развивается вместе с вами. Путешествие, ориентированное на сообщество, со сбалансированными рейтами и инновационной экономикой.",
+                heroButton: "Изучить дорожную карту",
+                projectTitle: "Проект: Что такое <br><span class='animated-gradient-text'>Aetherion PWI?</span>",
+                projectDesc: "Aetherion PWI родился из желания возродить истинную суть MMORPG: путешествие. В мире, где доминируют высокоскоростные серверы, мы предлагаем другой опыт, с низко-средними рейтами, которые ценят каждое достижение и укрепляют узы сообщества.<br><br>Наш сервер является прогрессивным, начиная с классической эры Perfect World и продвигаясь через знаковые дополнения в запланированном темпе. Это идеальная возможность для новых игроков узнать историю с самого начала, а для ветеранов — пережить самые запоминающиеся моменты.",
+                pillarsTitle: "Принципы <span class='animated-gradient-text'>Aetherion</span>",
+                pillarsSubtitle: "Наша философия построена на трех фундаментальных принципах, которые обеспечивают справедливый, динамичный и долговечный игровой опыт.",
+                pillar1Title: "Прогрессивный Сервер", pillar1Desc: "Начните с классической версии и развивайтесь вместе с нами. Новые дополнения, классы, карты и испытания будут открываться по сезонам, создавая постоянное ощущение открытий и эволюции для всех.",
+                pillar2Title: "Уникальная Экономика", pillar2Desc: "Валюта Aetherion заменяет золото и добывается путем 'майнинга' в игре. Она движет всем рынком, от GSHOP до торговли аккаунтами, создавая живую экономику, контролируемую игроками.",
+                pillar3Title: "Ценный Опыт", pillar3Desc: "С низко-средними рейтами каждый уровень, предмет и дружба зарабатываются. Мы поощряем групповую игру, исследования и преданность, делая каждый момент в Pan Gu по-настоящему значимым.",
+                infoTitle: "Техническая <span class='animated-gradient-text'>Информация</span>", infoSubtitle: "Ознакомьтесь с деталями, рейтами и системами, которые определят ваше путешествие в Aetherion.",
+                infoRatesTitle: "Рейты Сервера", infoRateExp: "Опыт:", infoRateSp: "Дух:", infoRateCoin: "Монеты (Aetherion):", infoRateCoinValue: "Сбалансированные", infoRateDrop: "Дроп:", infoRateQuest: "Квесты (Опыт):",
+                infoVersionTitle: "Версия Игры", infoVersionInitial: "Начальная Версия:", infoVersionUpdates: "Дополнения:", infoVersionUpdatesValue: "Прогрессивные", infoVersionClient: "Клиент:", infoVersionClientValue: "Модифицированный", infoVersionUI: "Интерфейс:", infoVersionUIValue: "Современный и Оптимизированный",
+                infoSystemsTitle: "Основные Системы", infoSystemsList: "<li><span class='text-cyan-400'>✓</span> Прогрессивный Сервер</li><li><span class='text-cyan-400'>✓</span> Единая Валюта Aetherion</li><li><span class='text-cyan-400'>✓</span> Территориальные Войны (ТВ)</li><li><span class='text-cyan-400'>✓</span> Ежедневные и Сезонные События</li><li><span class='text-cyan-400'>✓</span> Система Anti Pay-to-Win</li>",
+                infoSheetTitle: "Техническая Карта", infoSheetClasses: "Начальные Классы:", infoSheetLvlCap: "Начальный Макс. Уровень:", infoSheetCult: "Макс. Культивация:", infoSheetProt: "Защита:", infoSheetProtValue: "Профессиональная Anti-DDoS",
+                coinTitle: "Aetherion: Революционная <span class='animated-gradient-text'>Экономика</span>", coinSubtitle: "Забудьте о золоте. Мы представляем уникальную, 'майнинговую' денежную систему, центральную для всех транзакций на сервере.",
+                coinWhatIs: "Что такое Aetherion?", coinDesc: "Aetherion — это суверенная и **единственная** валюта нашей вселенной, полностью заменяющая традиционную систему золота. Вдохновленная цифровыми валютами, ее можно **'майнить'**, что позволяет игрокам добывать доли монеты благодаря преданности и постоянным усилиям в определенных игровых действиях.",
+                coinFeatures: "<li class='flex items-start'><span class='text-cyan-400 mr-3 mt-1'>✓</span><span><strong>Полная замена золота:</strong> Единая валюта для всех транзакций, упрощающая экономику.</span></li><li class='flex items-start'><span class='text-cyan-400 mr-3 mt-1'>✓</span><span><strong>Майнинг:</strong> Ценность создается вашим временем и усилиями в игре, а не только удачей в дропе.</span></li><li class='flex items-start'><span class='text-cyan-400 mr-3 mt-1'>✓</span><span><strong>Контроль инфляции:</strong> Система, разработанная для стабильности и предсказуемости, защищающая покупательную способность игроков.</span></li>",
+                coinMarketTitle: "Рынок и Утилиты", coinMarketDesc: "С Aetherion у вас есть доступ к живому рынку и всем премиум-функциям сервера, не выходя из игры.",
+                coinDonationTitle: "Поддержать Сервер (Донат)", coinDonationDesc: "Для поддержания нашей инфраструктуры и постоянного развития мы предлагаем возможность получить Aetherion через пожертвования. Это способ поддержать проект и удобная альтернатива основному методу майнинга в игре.",
+                coinDonationRate: "Обменный курс: 100 Aetherion = $1 USD / €1 EUR",
+                coinMarketList: "<li class='flex flex-col sm:flex-row justify-between items-start sm:items-center bg-gray-800/50 p-4 rounded-md'><span class='font-bold text-white text-lg mb-2 sm:mb-0'>Торговля аккаунтами</span><span class='text-sm text-gray-400 text-right'>Безопасная платформа для покупки и продажи персонажей.</span></li><li class='flex flex-col sm:flex-row justify-between items-start sm:items-center bg-gray-800/50 p-4 rounded-md'><span class='font-bold text-white text-lg mb-2 sm:mb-0'>Эксклюзивный GSHOP</span><span class='text-sm text-gray-400 text-right'>Доступ к косметике и предметам удобства.</span></li><li class='flex flex-col sm:flex-row justify-between items-start sm:items-center bg-gray-800/50 p-4 rounded-md'><span class='font-bold text-white text-lg mb-2 sm:mb-0'>Боевой Пропуск</span><span class='text-sm text-gray-400 text-right'>Открывайте сезонные награды, играя.</span></li><li class='flex flex-col sm:flex-row justify-between items-start sm:items-center bg-gray-800/50 p-4 rounded-md'><span class='font-bold text-white text-lg mb-2 sm:mb-0'>Редкие предметы</span><span class='text-sm text-gray-400 text-right'>Приобретайте эксклюзивные полеты и скакунов.</span></li>",
+                miningTitle: "Майнинг Aetherion: <span class='animated-gradient-text'>Ваши Усилия Вознаграждены</span>", miningSubtitle: "Aetherion не находят, его выковывают. Благодаря вашей ежедневной преданности вы накапливаете доли валюты, которая движет нашим миром.",
+                mining1Title: "Ежедневные Задания", mining1Desc: "Выполняйте свои ежедневные задачи в мире Pan Gu. Каждое выполненное задание добавляет доли Aetherion в ваш кошелек, вознаграждая вашу последовательность.",
+                mining2Title: "Испытания в Данжах", mining2Desc: "Сражайтесь с самыми опасными вызовами в глубинах подземелий (данжей). Победа над боссами и завершение инстансов гарантирует порции Aetherion для участников.",
+                mining3Title: "Серверные События", mining3Desc: "Активно участвуйте в ежедневных и сезонных событиях. Ваше присутствие и производительность вознаграждаются Aetherion, делая каждое событие ценной возможностью.",
+                benefitsTitle: "Системы <span class='animated-gradient-text'>Преимуществ</span>", benefitsSubtitle: "Эксклюзивные программы для укрепления сообщества, вознаграждения за вашу лояльность и стимулирования роста Aetherion.",
+                benefit1Title: "Миграция Гильдий", benefit1Desc: "Приведите свою гильдию в Aetherion! Мы предлагаем начальные пакеты преимуществ, включая Aetherion и предметы поддержки, для устоявшихся гильдий, желающих начать свой путь с нами.",
+                benefit2Title: "Социальное Продвижение", benefit2Desc: "Помогите распространить информацию! Делитесь нашим контентом в своих социальных сетях и получайте вознаграждение в Aetherion за помощь в росте нашего сообщества.",
+                benefit3Title: "Реферальные Награды", benefit3Desc: "Играйте с друзьями! Приглашайте новых игроков на сервер, и когда они достигнут определенных целей, и вы, и ваш друг получите бонус в Aetherion.",
+                benefit4Title: "Награды за Голосование", benefit4Desc: "Ваш голос укрепляет сервер! Голосуйте ежедневно на сайтах наших партнеров по рейтингу и получайте доли Aetherion в благодарность за вашу постоянную поддержку.",
+                benefit5Title: "Создатели Контента", benefit5Desc: "Вы стример или ютубер? Мы предлагаем партнерскую программу с ежемесячными наградами в Aetherion и рекламной поддержкой для тех, кто создает контент о Aetherion PWI.",
+                roadmapTitle: "Наш Прогрессивный <span class='animated-gradient-text'>Путь</span>", roadmapSubtitle: "Эволюция Aetherion будет разделена на Эры. Каждая Эра принесет крупное дополнение, новые вызовы и новую главу в истории нашего мира.",
+                era1Title: "Эра 1: Классическое Начало", era1List: "<li class='flex items-center'><span class='text-green-400 mr-2'>✓</span>Классы: Люди, Сиды и Зооморфы</li><li class='flex items-center'><span class='text-green-400 mr-2'>✓</span>Начальный Макс. Уровень: 99</li><li class='flex items-center'><span class='text-green-400 mr-2'>✓</span>Фокус на Классических Данжах (Сумеречный Храм, Иней)</li><li class='flex items-center'><span class='text-green-400 mr-2'>✓</span>Еженедельные Территориальные Войны (ТВ)</li>",
+                era2Title: "Эра 2: Восстание Амфибий", era2List: "<li class='flex items-center'><span class='text-green-400 mr-2'>✓</span>Новая Раса: Амфибии (Убийца и Шаман)</li><li class='flex items-center'><span class='text-green-400 mr-2'>✓</span>Увеличение Макс. Уровня</li><li class='flex items-center'><span class='text-green-400 mr-2'>✓</span>Новые Данжи и Подводный Мир</li><li class='flex items-center'><span class='text-green-400 mr-2'>✓</span>Введение системы Морай</li>",
+                era3Title: "Эра 3: Пробуждение Древних", era3List: "<li class='flex items-center'><span class='text-green-400 mr-2'>✓</span>Новая Раса: Древние (Страж и Мистик)</li><li class='flex items-center'><span class='text-green-400 mr-2'>✓</span>Мир Людей и новые Навыки</li><li class='flex items-center'><span class='text-green-400 mr-2'>✓</span>Собор и новые PvE-испытания</li><li class='flex items-center'><span class='text-green-400 mr-2'>✓</span>Эволюция снаряжения и оружия</li>",
+                eraFutureTitle: "Будущие Эры...", eraFutureDesc: "Путешествие на этом не заканчивается. Дополнения, такие как 'Тени' и 'Перерождение', будут планироваться и внедряться на основе отзывов сообщества и естественного прогресса сервера.",
+                teamTitle: "Команда за <span class='animated-gradient-text'>Проектом</span>", teamSubtitle: "Мы — увлеченные игроки и преданные профессионалы с огромным опытом во вселенной Perfect World, стремящиеся создать сервер, на котором мы всегда мечтали играть.",
+                teamMember1Role: "Основатель и .data Разработчик", teamMember1Desc: "Специалист по разработке серверов. Глубоко понимает сообщество и его потребности.",
+                teamMember2Role: "Инвестор и Бизнес-менеджер", teamMember2Desc: "Опыт в финансовом управлении. Обеспечивает долгосрочную прибыльность бизнеса.",
+                teamMember3Role: "Менеджер Проектов и Сайтов", teamMember3Desc: "Обширный опыт в играх, отвечает за обновления и улучшения сайтов и систем.",
+                teamMember4Role: "Ведущий Src Разработчик", teamMember4Desc: "Отвечает за код, обновления и общую разработку сервера, программирование и обратную инженерию.",
+                teamMember5Role: "Специалист по Поддержке и Сообществу", teamMember5Desc: "Посвящен предоставлению быстрой и эффективной поддержки, обеспечивая лучший опыт для игроков.",
+                teamMember6Role: "Веб-дизайнер", teamMember6Desc: "Отвечает за создание эксклюзивных визуальных материалов для маркетинга сервера, изображений, фонов и т. д."
+            },
+            // Portuguese
+            pt: {
+                navProject: "O Projeto", navPillars: "Pilares", navInfo: "Informações", navCoin: "Moeda Aetherion", navMining: "Mineração", navBenefits: "Benefícios", navRoadmap: "Roadmap", navTeam: "Equipe",
+                navProjectMobile: "O Projeto", navPillarsMobile: "Pilares", navInfoMobile: "Informações", navCoinMobile: "Moeda Aetherion", navMiningMobile: "Mineração", navBenefitsMobile: "Benefícios", navRoadmapMobile: "Roadmap", navTeamMobile: "Equipe", navLangMobile: "Idioma:",
+                heroTitle: "Aetherion: A Saga Progressiva de <span class='animated-gradient-text'>Perfect World</span>",
+                heroSubtitle: "Reviva a nostalgia do clássico e desbrave novas expansões em um servidor que evolui com você. Uma jornada focada na comunidade, com rates balanceadas e uma economia inovadora.",
+                heroButton: "Explore o Roadmap",
+                projectTitle: "O Projeto: O que é <br><span class='animated-gradient-text'>Aetherion PWI?</span>",
+                projectDesc: "Aetherion PWI nasce de um desejo de resgatar a verdadeira essência dos MMORPGs: a jornada. Em um cenário dominado por servidores de alta velocidade, propomos uma experiência diferente, com rates medium-baixas que valorizam cada conquista e fortalecem os laços da comunidade.<br><br>Nosso servidor é progressivo, começando pela era clássica de Perfect World e avançando através das expansões icônicas em um ritmo planejado. É a oportunidade perfeita para novos jogadores conhecerem a história desde o início e para os veteranos reviverem seus momentos mais memoráveis.",
+                pillarsTitle: "Os Pilares de <span class='animated-gradient-text'>Aetherion</span>",
+                pillarsSubtitle: "Nossa filosofia é construída sobre três pilares fundamentais que garantem uma experiência de jogo justa, dinâmica e duradoura.",
+                pillar1Title: "Servidor Progressivo", pillar1Desc: "Comece na versão clássica e avance conosco. Novas expansões, classes, mapas e desafios serão desbloqueados em temporadas, criando um sentimento constante de descoberta e evolução para todos.",
+                pillar2Title: "Economia Única", pillar2Desc: "A moeda Aetherion substitui o gold e é obtida por 'mineração' no jogo. Ela move todo o mercado, da GSHOP ao comércio de contas, criando uma economia vibrante e controlada pelos jogadores.",
+                pillar3Title: "Experiência Valorizada", pillar3Desc: "Com rates medium-baixas, cada nível, item e amizade são conquistados. Incentivamos o jogo em grupo, a exploração e a dedicação, tornando cada momento no Pan Gu verdadeiramente significativo.",
+                infoTitle: "Informações <span class='animated-gradient-text'>Técnicas</span>", infoSubtitle: "Confira os detalhes, rates e sistemas que definem a sua jornada em Aetherion.",
+                infoRatesTitle: "Rates do Servidor", infoRateExp: "Experiência:", infoRateSp: "Alma:", infoRateCoin: "Moeda (Aetherion):", infoRateCoinValue: "Balanceada", infoRateDrop: "Drop:", infoRateQuest: "Quests (EXP):",
+                infoVersionTitle: "Versão do Jogo", infoVersionInitial: "Versão Inicial:", infoVersionUpdates: "Expansões:", infoVersionUpdatesValue: "Progressivas", infoVersionClient: "Cliente:", infoVersionClientValue: "Customizado", infoVersionUI: "Interface:", infoVersionUIValue: "Moderna e Otimizada",
+                infoSystemsTitle: "Sistemas Principais", infoSystemsList: "<li><span class='text-cyan-400'>✓</span> Servidor Progressivo</li><li><span class='text-cyan-400'>✓</span> Moeda Única Aetherion</li><li><span class='text-cyan-400'>✓</span> Guerras Territoriais (TW)</li><li><span class='text-cyan-400'>✓</span> Eventos Diários e Sazonais</li><li><span class='text-cyan-400'>✓</span> Sistema Anti Pay-to-Win</li>",
+                infoSheetTitle: "Ficha Técnica", infoSheetClasses: "Classes Iniciais:", infoSheetLvlCap: "Level Cap Inicial:", infoSheetCult: "Cultivo Máximo:", infoSheetProt: "Proteção:", infoSheetProtValue: "Anti-DDoS Profissional",
+                coinTitle: "Aetherion: A Economia <span class='animated-gradient-text'>Revolucionária</span>", coinSubtitle: "Esqueça o gold. Apresentamos um sistema monetário único, 'minerável' e central para todas as transações do servidor.",
+                coinWhatIs: "O Que é o Aetherion?", coinDesc: "Aetherion é a moeda soberana e **única** de nosso universo, substituindo completamente o sistema de gold tradicional. Inspirada em moedas digitais, ela pode ser **'minerada'**, permitindo que os jogadores farmem frações da moeda através de dedicação e esforço contínuo em atividades específicas do jogo.",
+                coinFeatures: "<li class='flex items-start'><span class='text-cyan-400 mr-3 mt-1'>✓</span><span><strong>Substituição Total do Gold:</strong> Uma única moeda para governar todas as transações, simplificando a economia.</span></li><li class='flex items-start'><span class='text-cyan-400 mr-3 mt-1'>✓</span><span><strong>Farm de Mineração:</strong> O valor é gerado pelo seu tempo e esforço em jogo, não apenas pela sorte em drops.</span></li><li class='flex items-start'><span class='text-cyan-400 mr-3 mt-1'>✓</span><span><strong>Controle de Inflação:</strong> Um sistema projetado para ser estável e previsível, protegendo o poder de compra dos jogadores.</span></li>",
+                coinMarketTitle: "Mercado & Utilidades", coinMarketDesc: "Com Aetherion, você tem acesso a um mercado vibrante e a todas as funcionalidades premium do servidor, tudo sem sair do jogo.",
+                coinDonationTitle: "Apoie o Servidor (Doação)", coinDonationDesc: "Para manter nossa infraestrutura e desenvolvimento, oferecemos a opção de obter Aetherion através de doações. Esta é uma forma de apoiar o projeto e uma alternativa conveniente ao método principal de mineração no jogo.",
+                coinDonationRate: "Taxa de Câmbio: 100 Aetherion = $1 USD / €1 EUR",
+                coinMarketList: "<li class='flex flex-col sm:flex-row justify-between items-start sm:items-center bg-gray-800/50 p-4 rounded-md'><span class='font-bold text-white text-lg mb-2 sm:mb-0'>Comércio de Contas</span><span class='text-sm text-gray-400 text-right'>Plataforma segura para comprar e vender personagens.</span></li><li class='flex flex-col sm:flex-row justify-between items-start sm:items-center bg-gray-800/50 p-4 rounded-md'><span class='font-bold text-white text-lg mb-2 sm:mb-0'>GSHOP Exclusiva</span><span class='text-sm text-gray-400 text-right'>Acesso a cosméticos e itens de conveniência.</span></li><li class='flex flex-col sm:flex-row justify-between items-start sm:items-center bg-gray-800/50 p-4 rounded-md'><span class='font-bold text-white text-lg mb-2 sm:mb-0'>Passe de Batalha</span><span class='text-sm text-gray-400 text-right'>Desbloqueie recompensas sazonais jogando.</span></li><li class='flex flex-col sm:flex-row justify-between items-start sm:items-center bg-gray-800/50 p-4 rounded-md'><span class='font-bold text-white text-lg mb-2 sm:mb-0'>Itens Raros</span><span class='text-sm text-gray-400 text-right'>Adquira voos e montarias exclusivos.</span></li>",
+                miningTitle: "Minerando Aetherion: <span class='animated-gradient-text'>O Seu Esforço Recompensado</span>", miningSubtitle: "Aetherion não é encontrado, é forjado. Através de sua dedicação diária, você acumula frações da moeda que move o nosso mundo.",
+                mining1Title: "Missões Diárias", mining1Desc: "Complete suas tarefas diárias no mundo de Pan Gu. Cada missão concluída contribui com frações de Aetherion para sua carteira, recompensando sua consistência.",
+                mining2Title: "Desafios em Dungeons", mining2Desc: "Enfrente os desafios mais perigosos nas profundezas das dungeons (DGs). Derrotar chefes e concluir instâncias garante porções de Aetherion para os participantes.",
+                mining3Title: "Eventos do Servidor", mining3Desc: "Participe ativamente dos eventos diários e sazonais. Sua presença e desempenho são recompensados com Aetherion, tornando cada evento uma oportunidade valiosa.",
+                benefitsTitle: "Sistemas de <span class='animated-gradient-text'>Benefícios</span>", benefitsSubtitle: "Programas exclusivos para fortalecer a comunidade, recompensar sua lealdade e impulsionar o crescimento do Aetherion.",
+                benefit1Title: "Migração de Guilds", benefit1Desc: "Traga sua guild para o Aetherion! Oferecemos pacotes de benefícios iniciais, incluindo Aetherion e itens de suporte, para guilds estabelecidas que desejam iniciar sua jornada conosco.",
+                benefit2Title: "Divulgação Social", benefit2Desc: "Ajude a espalhar a palavra! Compartilhe nosso conteúdo em suas redes sociais e seja recompensado com Aetherion por ajudar a nossa comunidade a crescer.",
+                benefit3Title: "Indicação Premiada", benefit3Desc: "Jogue com seus amigos! Convide novos jogadores para o servidor e, quando eles atingirem determinados objetivos, tanto você quanto seu amigo receberão um bônus em Aetherion.",
+                benefit4Title: "Votação Premiada", benefit4Desc: "Seu voto fortalece o servidor! Vote diariamente em nossos parceiros de ranking e receba frações de Aetherion como agradecimento por seu apoio contínuo.",
+                benefit5Title: "Criadores de Conteúdo", benefit5Desc: "É streamer ou youtuber? Oferecemos um programa de parceria com recompensas mensais em Aetherion e suporte de divulgação para quem cria conteúdo sobre o Aetherion PWI.",
+                roadmapTitle: "Nossa Jornada <span class='animated-gradient-text'>Progressiva</span>", roadmapSubtitle: "A evolução de Aetherion será dividida em Eras. Cada Era trará uma grande expansão, novos desafios e um novo capítulo na história do nosso mundo.",
+                era1Title: "Era 1: O Início Clássico", era1List: "<li class='flex items-center'><span class='text-green-400 mr-2'>✓</span>Classes: Humanos, Alados e Selvagens</li><li class='flex items-center'><span class='text-green-400 mr-2'>✓</span>Level Cap Inicial: 99</li><li class='flex items-center'><span class='text-green-400 mr-2'>✓</span>Foco em Dungeons Clássicas (Dusk, Frost)</li><li class='flex items-center'><span class='text-green-400 mr-2'>✓</span>Guerras Territoriais (TW) semanais</li>",
+                era2Title: "Era 2: A Ascensão dos Abissais", era2List: "<li class='flex items-center'><span class='text-green-400 mr-2'>✓</span>Nova Raça: Abissais (Mercenário e Espiritualista)</li><li class='flex items-center'><span class='text-green-400 mr-2'>✓</span>Aumento do Level Cap</li><li class='flex items-center'><span class='text-green-400 mr-2'>✓</span>Novas Dungeons e Mundo Submarino</li><li class='flex items-center'><span class='text-green-400 mr-2'>✓</span>Implementação do sistema de Morai</li>",
+                era3Title: "Era 3: O Despertar do Submundo", era3List: "<li class='flex items-center'><span class='text-green-400 mr-2'>✓</span>Nova Raça: Guardiões (Arcano e Místico)</li><li class='flex items-center'><span class='text-green-400 mr-2'>✓</span>Mundo Primitivo e novas Habilidades</li><li class='flex items-center'><span class='text-green-400 mr-2'>✓</span>Catedral e novos desafios PvE</li><li class='flex items-center'><span class='text-green-400 mr-2'>✓</span>Evolução de equipamentos e armas</li>",
+                eraFutureTitle: "Eras Futuras...", eraFutureDesc: "A jornada não para aqui. Expansões como Retalhadores e Sombras serão planejadas e implementadas com base no feedback da comunidade e na progressão natural do servidor.",
+                teamTitle: "A Equipe por Trás do <span class='animated-gradient-text'>Projeto</span>", teamSubtitle: "Somos jogadores apaixonados e profissionais dedicados, com vasta experiência no universo de Perfect World, comprometidos em construir o servidor que sempre sonhamos em jogar.",
+                teamMember1Role: "Fundador & Desenvolvedor .data", teamMember1Desc: "Especialista em desenvolvimento de servidores. Conhecendo a fundo a comunidade e suas necessidades.",
+                teamMember2Role: "Investidor e Gestor de Negócios", teamMember2Desc: "Experiência em gestão financeira. Garante a rentabilidade do negócio a longo prazo.",
+                teamMember3Role: "Gerente de Projeto e Sites", teamMember3Desc: "Ampla experieñcia em games, Responsável por atualizações e melhorias em sites e sistemas.",
+                teamMember4Role: "Desenvolvedor Principal Src", teamMember4Desc: "Responsável por código atualizações e desenvolvimento geral do servidor, programação e engenharia reversa",
+                teamMember5Role: "Especialista em Suporte e Comunidade", teamMember5Desc: "Dedicado a fornecer suporte rápido e eficiente, garantindo a melhor experiência para os jogadores.",
+                teamMember6Role: "Web Designer", teamMember6Desc: "Responsável pela criação de material visual exclusivo para o marketing do servidor, imagens, backgrounds etc."
+            }
+        };
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const langOptions = document.querySelectorAll('.lang-option');
+            const desktopLangButton = document.getElementById('desktop-lang-button');
+            const desktopLangMenu = document.getElementById('desktop-lang-menu');
+
+            // --- Function to set language ---
+            const setLanguage = (lang) => {
+                const elements = document.querySelectorAll('[data-key]');
+                elements.forEach(element => {
+                    const key = element.getAttribute('data-key');
+                    if (translations[lang] && translations[lang][key]) {
+                        element.innerHTML = translations[lang][key];
+                    }
+                });
+
+                document.documentElement.lang = lang.startsWith('pt') ? 'pt-BR' : lang;
+                const langText = { 'pt': 'PT-BR', 'en': 'EN', 'es': 'ES', 'ru': 'RU' };
+                document.getElementById('current-lang-desktop').textContent = langText[lang];
+                localStorage.setItem('language', lang);
+
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+            };
+
+            // --- Event Listeners ---
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            langOptions.forEach(option => {
+                option.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    const lang = option.getAttribute('data-lang');
+                    setLanguage(lang);
+                    if(!desktopLangMenu.classList.contains('hidden')) {
+                        desktopLangMenu.classList.add('hidden');
+                    }
+                });
+            });
+            
+            desktopLangButton.addEventListener('click', () => {
+                desktopLangMenu.classList.toggle('hidden');
+            });
+
+            window.addEventListener('click', (event) => {
+                if (!desktopLangButton.contains(event.target) && !desktopLangMenu.contains(event.target)) {
+                    desktopLangMenu.classList.add('hidden');
+                }
+            });
+
+            // --- Initial Setup ---
+            const savedLang = localStorage.getItem('language') || 'pt';
+            setLanguage(savedLang);
+        });
+    </script>
+</body>
+</html>

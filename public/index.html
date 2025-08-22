@@ -59,9 +59,20 @@
                 <a href="#roadmap" class="hover:text-fuchsia-500 transition-colors">Roadmap</a>
                 <a href="#equipe" class="hover:text-fuchsia-500 transition-colors">Equipe</a>
             </nav>
-            <button class="md:hidden text-white focus:outline-none">
+            <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
             </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden">
+            <nav class="flex flex-col space-y-4 px-6 pb-4 text-sm font-medium text-gray-300">
+                <a href="#sobre" class="hover:text-fuchsia-500 transition-colors">Sobre</a>
+                <a href="#proposta" class="hover:text-fuchsia-500 transition-colors">Proposta</a>
+                <a href="#monetizacao" class="hover:text-fuchsia-500 transition-colors">Monetização</a>
+                <a href="#detalhes-monetizacao" class="hover:text-fuchsia-500 transition-colors">Detalhes Monetização</a>
+                <a href="#financas" class="hover:text-fuchsia-500 transition-colors">Finanças</a>
+                <a href="#roadmap" class="hover:text-fuchsia-500 transition-colors">Roadmap</a>
+                <a href="#equipe" class="hover:text-fuchsia-500 transition-colors">Equipe</a>
+            </nav>
         </div>
     </header>
 
@@ -294,11 +305,11 @@
                     </p>
                 </div>
                 <div class="relative max-w-3xl mx-auto">
-                    <div class="absolute left-1/2 top-0 h-full w-0.5 bg-gradient-to-b from-fuchsia-500 to-cyan-500 transform -translate-x-1/2"></div>
+                    <div class="absolute left-2.5 md:left-1/2 top-0 h-full w-0.5 bg-gradient-to-b from-fuchsia-500 to-cyan-500 transform md:-translate-x-1/2"></div>
                     
                     <div class="relative mb-16">
-                        <div class="absolute left-1/2 top-4 w-5 h-5 bg-fuchsia-500 rounded-full transform -translate-x-1/2 border-4 border-black glowing-border"></div>
-                        <div class="md:ml-auto md:w-1/2 md:pl-16">
+                        <div class="absolute left-2.5 top-1 w-5 h-5 bg-fuchsia-500 rounded-full transform -translate-x-1/2 border-4 border-black glowing-border md:left-1/2"></div>
+                        <div class="pl-10 md:pl-0 md:ml-auto md:w-1/2 md:pl-16">
                             <div class="bg-gray-900/50 p-6 rounded-lg border border-fuchsia-500/30">
                                 <h3 class="text-xl font-bold text-fuchsia-400">Fase 1: Lançamento e Estabilização</h3>
                                 <ul class="mt-4 space-y-2 text-gray-300">
@@ -311,8 +322,8 @@
                     </div>
 
                     <div class="relative">
-                        <div class="absolute left-1/2 top-4 w-5 h-5 bg-cyan-500 rounded-full transform -translate-x-1/2 border-4 border-black glowing-border"></div>
-                        <div class="md:mr-auto md:w-1/2 md:pr-16">
+                        <div class="absolute left-2.5 top-1 w-5 h-5 bg-cyan-500 rounded-full transform -translate-x-1/2 border-4 border-black glowing-border md:left-1/2"></div>
+                        <div class="pl-10 md:pl-0 md:mr-auto md:w-1/2 md:pr-16">
                             <div class="bg-gray-900/50 p-6 rounded-lg border border-cyan-500/30">
                                 <h3 class="text-xl font-bold text-cyan-400">Fase 2: Expansão e Crescimento</h3>
                                 <ul class="mt-4 space-y-2 text-gray-300">
@@ -340,7 +351,7 @@
                         <p class="mt-4 text-gray-400 text-sm">Especialista em desenvolvimento de servidores. Conhecendo a fundo a comunidade e suas necessidades.</p>
                     </div>
                     <div class="bg-black p-6 rounded-xl border border-cyan-500/30 text-center transform hover:-translate-y-2 transition-transform duration-300 glowing-border-hover">
-                        <h3 class="text-xl font-bold text-white">Thiago Lorenzetti</h3>
+                        <h3 class="text-xl font-bold text-white">Giba Finn Lara</h3>
                         <p class="text-cyan-400 text-sm mt-1">Investidor e Gestor de Negócios</p>
                         <p class="mt-4 text-gray-400 text-sm">Experiência em gestão financeira. Garante a rentabilidade do negócio a longo prazo.</p>
                     </div>
@@ -371,6 +382,7 @@
     </main>
 
     <script>
+        // Função para conversão de moedas
         function converterMoedas() {
             // Taxas de câmbio
             const taxaUSD = 5.20;
@@ -386,6 +398,16 @@
             // Exibir o resultado formatado
             document.getElementById('totalBRL').innerText = `R$ ${totalBRL.toFixed(2).replace('.', ',')}`;
         }
+
+        // Script para menu mobile
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        });
     </script>
 </body>
 </html>
